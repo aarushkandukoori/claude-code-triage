@@ -6,7 +6,7 @@ Only handles the markdown the post uses: front matter, ### headings, paragraphs,
 import html, os, re, shutil, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-POST = os.path.join(ROOT, "site/_posts/2026-11-07-claude-code-open-issues.md")
+POST = os.path.join(ROOT, "site/_posts/2026-11-06-claude-code-open-issues.md")
 OUT = os.path.join(ROOT, "preview")
 WIDGETS = ["sweep-window", "backlog-waffle", "sort-the-issues"]
 
