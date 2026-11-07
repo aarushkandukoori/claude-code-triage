@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the sweep sees</title>
+<style>
+  :root {
+    --bg: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+    --line: #e1e0d9; --border: #d3d1c8;
+    --g1: #c3c2b7; --g2: #a9a79e; --g3: #898781;
+    --blue: #2a78d6; --tick: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+      --line: #2c2c2a; --border: #3a3a37;
+      --g1: #4a4a46; --g2: #5e5d58; --g3: #75746e;
+      --blue: #3987e5; --tick: #f0efec;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; overflow: hidden; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px; line-height: 1.4;
+    -webkit-text-size-adjust: 100%;
+  }
+  #app { position: relative; padding: 14px 12px 14px; }
+  h2 { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 650; }
+  .lede { margin: 4px 0 12px; color: var(--ink2); max-width: 64ch; }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; }
+  button {
+    font: inherit; font-size: 13.5px; line-height: 1.2; color: var(--ink);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+    padding: 7px 14px; min-height: 34px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color .15s ease, background-color .15s ease;
+  }
+  button:hover { border-color: var(--ink2); }
+  button:active { background: var(--line); }
+  button.next { border-color: var(--ink); }
+  button.small { font-size: 13px; padding: 7px 12px; color: var(--ink2); }
+  button:focus-visible, #grid:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  .res { margin: 12px 0 0; }
+  #result { min-height: 1.4em; }
+  .res .main { display: block; }
+  .res .sub { display: block; margin-top: 3px; font-size: 13px; color: var(--ink2); }
+  .res .quiet { color: var(--muted); }
+  /* Invisible copy of the result line, used to measure the tallest message at this width. */
+  #probe { position: absolute; top: 0; left: 12px; right: 12px; margin: 0; visibility: hidden; pointer-events: none; }
+
+  .legend { margin: 0 0 14px; font-size: 13px; color: var(--ink2); }
+  .legend ul {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 6px 16px;
+  }
+  .legend ul + ul { margin-top: 6px; }
+  .legend li { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: opacity .3s ease; }
+  .legend li.lead { color: var(--muted); }
+  .legend li.zero { opacity: .4; }
+  .legend canvas { display: block; width: 12px; height: 12px; flex: none; }
+  .legend .n { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  .status {
+    display: flex; flex-wrap: wrap; gap: 2px 16px; margin: 10px 0 0;
+    font-size: 13px; font-variant-numeric: tabular-nums;
+  }
+  .nw { white-space: nowrap; }
+  #info { margin: 2px 0 8px; min-height: 1.4em; font-size: 13px; color: var(--ink2); }
+  #info.quiet { color: var(--muted); }
+
+  #grid { display: block; margin-left: -3px; touch-action: manipulation; }
+  .note { margin: 8px 0 0; font-size: 12px; line-height: 1.4; color: var(--muted); }
+
+  @media (max-width: 480px) {
+    #info { min-height: 2.8em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    button, .legend li { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <h2>What the sweep sees</h2>
+  <p class="lede">Twice a day a script reads the 1,000 least recently updated open issues and puts a stale label on the quiet ones it is allowed to touch.</p>
+  <div class="legend">
+    <ul id="legSkip" aria-label="Skipped every run"><li class="lead" id="legLead" aria-hidden="true">Skipped every run</li></ul>
+    <ul id="legOk" aria-label="Can be labeled"></ul>
+  </div>
+  <div class="controls">
+    <button type="button" id="runOld" class="next">Run today's sweep</button>
+    <button type="button" id="runNew">Run the fixed sweep</button>
+    <button type="button" id="reset" class="small">Reset</button>
+  </div>
+  <p id="result" class="res" aria-live="polite"></p>
+  <div class="status"><span id="cLooked">Looked at 0</span><span id="cLabeled">Labeled 0</span><span id="cSkipped">Skipped 0</span></div>
+  <p id="info" class="quiet" aria-live="polite"></p>
+  <div id="wrap"><canvas id="grid" tabindex="0" role="img" aria-label="Grid of open issues in the order the sweep reads them"></canvas></div>
+  <p class="note" id="note">Each cell is one real open issue, in the order the sweep reads them (least recently updated first), from a snapshot taken Nov&nbsp;6,&nbsp;2026.</p>
+  <div id="probe" class="res" aria-hidden="true"></div>
+</div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  'use strict';
+
+  // Cell kinds. Skipped kinds use the neutral grays; "small" draws a smaller square
+  // so a kind that shares a gray still has its own shape.
+  var KINDS = {
+    up: { label: '10+ upvotes', aria: 'with 10+ upvotes', info: 'Skipped - 10+ upvotes', color: 'g1', small: false },
+    as: { label: 'Assigned', aria: 'assigned', info: 'Skipped - assigned to someone', color: 'g2', small: false },
+    st: { label: 'Already stale', aria: 'already stale', info: 'Skipped - already labeled stale', color: 'g3', small: false },
+    lk: { label: 'Locked', aria: 'locked', info: 'Skipped - locked', color: 'g3', small: true },
+    pr: { label: 'Pull request', aria: 'pull requests', info: 'Skipped - a pull request', color: 'g1', small: true },
+    zz: { label: 'Other', aria: 'skipped for another reason', info: 'Skipped', color: 'g2', small: true },
+    ok: { label: 'Can be labeled', aria: 'can be labeled', info: 'Can be labeled', color: 'blue', small: false }
+  };
+  var ORDER = ['up', 'as', 'st', 'lk', 'pr', 'zz', 'ok'];
+  var RUNS_PER_DAY = 2;
+  var MS_PER_CELL = 2.5;                  // 1,000 cells in about 2.5 s
+  var BLINK_MS = 320, POP_MS = 240;
+  var PAGE_GAP = 70, CELL_GAP = 1.6, APPEAR_MS = 200;
+  var WAVE_MS = 650, JITTER_MS = 110, OUT_MS = 160, IN_MS = 280;
+  var REFILL_MS = WAVE_MS + JITTER_MS + OUT_MS * 0.6 + IN_MS;
+  var PAD = 3;                            // css px around the grid so rings never clip
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var HINT_RESULT = "Press Run today's sweep to watch one pass, then try the fixed sweep.";
+  var IN_NEW = 'The fixed query asks GitHub search for only the issues the sweep may label.';
+  var HINT_INFO = 'Tap or hover a cell to see what it is.';
+  var NOTE_OLD = 'Each cell is one real open issue, in the order the sweep reads them (least recently updated first), from a snapshot taken Nov\u00a06,\u00a02026.';
+  var has = Object.prototype.hasOwnProperty;
+
+  function byId(id) { return document.getElementById(id); }
+  var resultEl = byId('result'), probeEl = byId('probe'), infoEl = byId('info'), noteEl = byId('note');
+  var legSkip = byId('legSkip'), legOk = byId('legOk'), legLead = byId('legLead');
+  var legendEl = document.querySelector('.legend');
+  var elLooked = byId('cLooked'), elSkipped = byId('cSkipped'), elLabeled = byId('cLabeled');
+  var btnOld = byId('runOld'), btnNew = byId('runNew'), btnReset = byId('reset');
+  var wrap = byId('wrap'), canvas = byId('grid'), ctx = canvas.getContext('2d');
+
+  function reportHeight() {
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    window.parent.postMessage({ type: 'chirpy-interactive-height', height: h }, '*');
+  }
+  window.addEventListener('load', reportHeight);
+  window.addEventListener('resize', reportHeight);
+  if (window.ResizeObserver) new ResizeObserver(reportHeight).observe(document.body);
+
+  // ---- data ----
+  var DATA = {};
+  try { DATA = JSON.parse(byId('data').textContent); } catch (err) { DATA = {}; }
+  if (!DATA || typeof DATA !== 'object') DATA = {};
+  var win = Array.isArray(DATA.window) ? DATA.window.map(function (c) {
+    c = String(c);
+    return has.call(KINDS, c) ? c : 'zz';
+  }) : [];
+  var N = win.length;
+  // The fixed sweep stops at this many labels a run (GitHub write limits).
+  var CAP = Math.min(N, Number(DATA.cap) > 0 ? Math.floor(Number(DATA.cap)) : N);
+
+  var base = {};
+  ORDER.forEach(function (k) { base[k] = 0; });
+  win.forEach(function (c) { base[c]++; });
+  if (DATA.counts && typeof DATA.counts === 'object') {
+    Object.keys(DATA.counts).forEach(function (k) {
+      if (has.call(base, k) && Number(DATA.counts[k]) !== base[k]) {
+        console.warn('sweep-window: counts.' + k + ' is ' + DATA.counts[k] + ' but the window has ' + base[k]);
+      }
+    });
+  }
+  var fixedCodes = [];
+  for (var q = 0; q < N; q++) fixedCodes.push('ok');
+
+  function fmt(n) { return Math.round(n).toLocaleString('en-US'); }
+  function joinList(xs) {
+    return xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1];
+  }
+  function parseWhen(s) {
+    var m = /^\s*([A-Za-z]{3})[A-Za-z]*\.?\s+(\d{1,2})(?:,?\s+(\d{1,2}):(\d{2}))?/.exec(s == null ? '' : String(s));
+    if (!m) return null;
+    var mon = MONTHS.indexOf(m[1].charAt(0).toUpperCase() + m[1].slice(1).toLowerCase());
+    if (mon < 0) return null;
+    var day = Number(m[2]);
+    return { mon: mon, day: day, key: ((mon * 32 + day) * 24 + (m[3] ? Number(m[3]) : 0)) * 60 + (m[4] ? Number(m[4]) : 0) };
+  }
+
+  // Logged runs, oldest first ("69, 71 and 64").
+  var runs = (Array.isArray(DATA.logged_runs) ? DATA.logged_runs : []).filter(function (r) {
+    return r && typeof r === 'object' && (typeof r.labeled === 'number' || typeof r.labeled === 'string') &&
+      r.labeled !== '' && isFinite(Number(r.labeled));
+  }).map(function (r, i) { return { n: Number(r.labeled), p: parseWhen(r.when), i: i }; });
+  var datesOk = runs.length > 0 && runs.every(function (r) { return r.p; });
+  if (datesOk) runs.sort(function (a, b) { return a.p.key - b.p.key || b.i - a.i; });
+  else runs.reverse();
+
+  function runRange() {
+    if (!datesOk) return '';
+    var a = runs[0].p, b = runs[runs.length - 1].p;
+    if (a.mon === b.mon) return MONTHS[a.mon] + ' ' + a.day + (b.day !== a.day ? '-' + b.day : '');
+    return MONTHS[a.mon] + ' ' + a.day + ' - ' + MONTHS[b.mon] + ' ' + b.day;
+  }
+  function inOld() {
+    var pages = Math.ceil(N / 100);
+    return 'Reading ' + pages + (pages === 1 ? ' page' : ' pages') + ' of 100, least recently updated first.';
+  }
+  function oldText(labeled) {
+    var parts = [fmt(labeled) + (labeled === 1 ? ' label' : ' labels') + ' from ' + fmt(N) + (N === 1 ? ' look.' : ' looks.')];
+    if (runs.length) {
+      var range = runRange();
+      parts.push(' The real ' + (runs.length === 1 ? 'run' : 'runs') + (range ? ' on ' : ''));
+      if (range) parts.push({ nw: range });
+      parts.push(' labeled ' + joinList(runs.map(function (r) { return fmt(r.n); })) + '.');
+    }
+    return parts;
+  }
+  function newText() {
+    return fmt(CAP) + (CAP === 1 ? ' label' : ' labels') + ' from ' + fmt(CAP) + (CAP === 1 ? ' look.' : ' looks.') +
+      ' Every issue the fixed query returns is one it may label.';
+  }
+  function newSub() {
+    var w = Number(DATA.waiting), q = Number(DATA.going_quiet_per_day), perDay = CAP * RUNS_PER_DAY;
+    var s = 'It stops at ' + fmt(CAP) + ' a run to stay under GitHub\'s write limits.';
+    if (w > 0 && q >= 0 && perDay > q) {
+      var days = w / (perDay - q);
+      var when = days < 14 ? 'about ' + Math.max(1, Math.round(days)) + ' days' : 'about ' + Math.round(days / 7) + ' weeks';
+      s += ' At ' + fmt(perDay) + ' a day, with about ' + fmt(q) + ' issues going quiet each day, today\'s ' + fmt(w) +
+        ' take ' + when + '.';
+    }
+    return s;
+  }
+  function noteNew() {
+    var w = Number(DATA.waiting);
+    return 'In the fixed run each cell stands for one of the ' + (w > 0 ? fmt(w) + ' ' : '') + 'quiet issues the new query finds.';
+  }
+
+  // ---- state ----
+  var S = {
+    mode: 'old',                // 'old' = today's sweep, 'new' = fixed sweep
+    codes: win.slice(),
+    prev: null, prevLab: null,  // what was on screen before a refill (null = nothing shown yet)
+    prevFixed: null,            // 1 where that cell came from the fixed query
+    appear: null,               // { kind: 'pages' | 'refill', t0, dur, end }
+    scan: null,                 // { kind, t0, done }
+    looked: 0, skipped: 0, labeled: 0,
+    seenAt: new Float64Array(N),
+    labAt: new Float64Array(N),
+    fxEnd: 0
+  };
+  function clearScan() {
+    S.seenAt.fill(-1e9);
+    S.labAt.fill(NaN);
+    S.looked = 0; S.skipped = 0; S.labeled = 0; S.fxEnd = 0;
+  }
+  clearScan();
+
+  var reduceMq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  function reduced() { return !!(reduceMq && reduceMq.matches); }
+
+  // ---- colors ----
+  var COL = {};
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ['ink', 'ink2', 'g1', 'g2', 'g3', 'blue', 'tick'].forEach(function (k) {
+      COL[k] = cs.getPropertyValue('--' + k).trim() || '#888888';
+    });
+  }
+
+  // ---- drawing ----
+  function box(c, x, y, w, r) {
+    if (r > 0 && c.roundRect) { c.beginPath(); c.roundRect(x, y, w, w, Math.min(r, w / 2)); c.fill(); }
+    else c.fillRect(x, y, w, w);
+  }
+  function paintCell(c, x, y, s, code, labeled, r) {
+    var k = KINDS[code];
+    c.fillStyle = COL[k.color];
+    if (k.small) {
+      var ins = Math.max(1, Math.round(s * 0.24));
+      box(c, x + ins, y + ins, s - 2 * ins, r ? Math.max(1, r * 0.6) : 0);
+    } else {
+      box(c, x, y, s, r);
+    }
+    if (labeled) {
+      var t = Math.max(2, Math.round(s * 0.4));
+      c.fillStyle = COL.tick;
+      c.fillRect(Math.round(x + (s - t) / 2), Math.round(y + (s - t) / 2), t, t);
+    }
+  }
+  function easeOut(u) { return 1 - Math.pow(1 - u, 3); }
+  function pageDelay(i) { return Math.floor(i / 100) * PAGE_GAP + (i % 100) * CELL_GAP; }
+  var PAGES_MS = N ? pageDelay(N - 1) + APPEAR_MS : 0;
+  function jitter(i) { return (Math.imul(i + 1, 2654435761) >>> 0) / 4294967296; }
+
+  var L = { ready: false, avail: 0, dpr: 0 };
+  function layout(force) {
+    var avail = wrap.clientWidth, dpr = window.devicePixelRatio || 1;
+    if (!avail || !N) return;
+    if (!force && L.ready && avail === L.avail && dpr === L.dpr) return;
+    var cols = avail / 40 >= 11 ? 40 : 25;
+    var rows = Math.ceil(N / cols);
+    var pd = Math.max(3, Math.floor((avail * dpr) / cols));
+    var pitch = pd / dpr;
+    var gd = Math.max(1, Math.round((pitch >= 14 ? 2 : pitch >= 9 ? 1.5 : 1) * dpr));
+    var Pd = Math.round(PAD * dpr);
+    var cd = pd - gd;
+    canvas.width = cols * pd - gd + 2 * Pd;
+    canvas.height = rows * pd - gd + 2 * Pd;
+    canvas.style.width = canvas.width / dpr + 'px';
+    canvas.style.height = canvas.height / dpr + 'px';
+    L = {
+      ready: true, avail: avail, dpr: dpr, cols: cols, rows: rows, pd: pd, gd: gd, cd: cd, Pd: Pd,
+      r: cd >= 7 * dpr ? Math.max(1, Math.round(1.5 * dpr)) : 0
+    };
+    drawSwatches();
+    sizeCounters();
+    sizeResult();
+    sizeLegend();
+    sizeNote();
+    draw(performance.now());
+    reportHeight();
+  }
+  function cellXY(i) { return [L.Pd + (i % L.cols) * L.pd, L.Pd + Math.floor(i / L.cols) * L.pd]; }
+  function swapDelay(i) {
+    var col = i % L.cols;
+    return (L.cols > 1 ? (L.cols - 1 - col) / (L.cols - 1) : 0) * WAVE_MS + jitter(i) * JITTER_MS;
+  }
+  // What cell i shows at time now, or null while nothing is drawn there yet (load or refill in progress).
+  function shown(i, now) {
+    var ap = S.appear;
+    if (ap && L.ready) {
+      if (ap.t0 < 0) return null;
+      if (ap.kind === 'pages') {
+        if (now - ap.t0 - pageDelay(i) < APPEAR_MS / 2) return null;
+      } else if (now - ap.t0 - swapDelay(i) - OUT_MS * 0.6 < IN_MS / 2) {
+        return S.prev[i] ? { code: S.prev[i], lab: S.prevLab[i] === 1, fixed: S.prevFixed[i] === 1 } : null;
+      }
+    }
+    return { code: S.codes[i], lab: S.labAt[i] <= now, fixed: S.mode === 'new' };
+  }
+  function ring(i, color, wCss, offCss) {
+    var p = cellXY(i);
+    var lw = Math.max(1, Math.round(wCss * L.dpr)), off = Math.round(offCss * L.dpr);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lw;
+    ctx.strokeRect(p[0] - off - lw / 2, p[1] - off - lw / 2, L.cd + 2 * off + lw, L.cd + 2 * off + lw);
+  }
+
+  function draw(now) {
+    if (!L.ready) return;
+    var c = ctx, cols = L.cols, pd = L.pd, s = L.cd, Pd = L.Pd, r = L.r;
+    c.setTransform(1, 0, 0, 1, 0, 0);
+    c.globalAlpha = 1;
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    var ap = S.appear, pops = [];
+    for (var i = 0; i < N; i++) {
+      var x = Pd + (i % cols) * pd, y = Pd + Math.floor(i / cols) * pd;
+      var code = S.codes[i], la = S.labAt[i], lab = la <= now;
+      if (ap && ap.t0 >= 0) {
+        if (ap.kind === 'pages') {
+          var u = (now - ap.t0 - pageDelay(i)) / APPEAR_MS;
+          if (u <= 0) continue;
+          if (u < 1) {
+            var e = easeOut(u), ss = s * (0.35 + 0.65 * e), o = (s - ss) / 2;
+            c.globalAlpha = e;
+            paintCell(c, x + o, y + o, ss, code, lab, r);
+            c.globalAlpha = 1;
+            continue;
+          }
+        } else {
+          var ts = ap.t0 + swapDelay(i), pc = S.prev[i];
+          var uo = (now - ts) / OUT_MS;
+          if (uo <= 0) { if (pc) paintCell(c, x, y, s, pc, S.prevLab[i] === 1, r); continue; }
+          if (uo < 1 && pc) {
+            var v = 1 - easeOut(uo), s2 = s * (0.4 + 0.6 * v), o2 = (s - s2) / 2;
+            c.globalAlpha = v;
+            paintCell(c, x + o2, y + o2, s2, pc, S.prevLab[i] === 1, r);
+            c.globalAlpha = 1;
+          }
+          var ui = (now - ts - OUT_MS * 0.6) / IN_MS;
+          if (ui <= 0) continue;
+          if (ui < 1) {
+            var e3 = easeOut(ui);
+            c.globalAlpha = e3;
+            paintCell(c, x + (1 - e3) * pd * 1.5, y, s, code, lab, r);
+            c.globalAlpha = 1;
+            continue;
+          }
+        }
+      } else if (ap) {
+        continue;                       // page animation queued but not started yet
+      }
+      if (lab && S.mode === 'old' && now - la < POP_MS) { pops.push(i); continue; }
+      paintCell(c, x, y, s, code, lab, r);
+      var sa = now - S.seenAt[i];
+      if (code !== 'ok' && sa >= 0 && sa < BLINK_MS) {   // skipped cells blink as the head passes
+        c.globalAlpha = 0.6 * (1 - sa / BLINK_MS);
+        c.fillStyle = COL.ink;
+        box(c, x, y, s, r);
+        c.globalAlpha = 1;
+      }
+    }
+    for (var j = 0; j < pops.length; j++) {  // the few cells today's sweep labels pop on top
+      var k = pops[j], p = cellXY(k);
+      var up = (now - S.labAt[k]) / POP_MS, s3 = s * (1 + 0.35 * (1 - easeOut(up))), o3 = (s - s3) / 2;
+      paintCell(c, p[0] + o3, p[1] + o3, s3, S.codes[k], true, r);
+    }
+    if (S.scan && !S.scan.done && S.scan.t0 >= 0 && now >= S.scan.t0 && S.looked < N) ring(S.looked, COL.ink, 2, 1);
+    var f = focusIndex();
+    if (f >= 0 && f < N) ring(f, COL.ink2, 1.5, 1);
+  }
+
+  // ---- legend ----
+  var legendKinds = ORDER.filter(function (k) { return k === 'ok' || base[k] > 0; });
+  var LEG = {};
+  function legendItem(key, label, withCount) {
+    var li = document.createElement('li');
+    var list = key === 'ok' || key === 'lab' ? legOk : legSkip;
+    var sw = document.createElement('canvas');
+    sw.setAttribute('aria-hidden', 'true');
+    li.appendChild(sw);
+    var t = document.createElement('span');
+    t.textContent = label;
+    li.appendChild(t);
+    var n = null;
+    if (withCount) {
+      n = document.createElement('span');
+      n.className = 'n';
+      li.appendChild(n);
+    }
+    list.appendChild(li);
+    return { li: li, sw: sw, n: n };
+  }
+  function buildLegend() {
+    legendKinds.forEach(function (k) { LEG[k] = legendItem(k, KINDS[k].label, true); });
+    LEG.lab = legendItem('lab', 'Labeled stale', false);
+  }
+  function drawSwatches() {
+    var dpr = window.devicePixelRatio || 1, px = Math.round(12 * dpr), r = Math.max(1, Math.round(1.5 * dpr));
+    Object.keys(LEG).forEach(function (k) {
+      var sw = LEG[k].sw;
+      if (sw.width !== px) { sw.width = px; sw.height = px; }
+      var c = sw.getContext('2d');
+      c.clearRect(0, 0, px, px);
+      paintCell(c, 0, 0, px, k === 'lab' ? 'ok' : k, k === 'lab', r);
+    });
+  }
+  function legendCount(mode, k) { return mode === 'new' ? (k === 'ok' ? N : 0) : base[k]; }
+  function legendText(mode) {
+    var lead = mode === 'new' ? 'Left out by the new query' : 'Skipped every run';
+    setText(legLead, 'lead', lead);
+    legendKinds.forEach(function (k) { LEG[k].n.textContent = fmt(legendCount(mode, k)); });
+    return lead;
+  }
+  function updateLegend() {
+    legSkip.setAttribute('aria-label', legendText(S.mode));
+    legendKinds.forEach(function (k) { LEG[k].li.classList.toggle('zero', legendCount(S.mode, k) === 0); });
+  }
+  // The legend and note text change with the mode. Keep both at their taller height for this
+  // width, so the buttons and grid never move and the iframe height stays put.
+  function sizeLegend() {
+    legendEl.style.minHeight = '';
+    var h = 0;
+    ['new', 'old'].forEach(function (m) { legendText(m); h = Math.max(h, legendEl.getBoundingClientRect().height); });
+    legendText(S.mode);
+    legendEl.style.minHeight = Math.ceil(h) + 'px';
+  }
+  function sizeNote() {
+    noteEl.style.minHeight = '';
+    var h = 0;
+    [NOTE_OLD, noteNew()].forEach(function (t) { noteEl.textContent = t; h = Math.max(h, noteEl.getBoundingClientRect().height); });
+    lastText.note = null;
+    setNote();
+    noteEl.style.minHeight = Math.ceil(h) + 'px';
+  }
+
+  // ---- text ----
+  var lastText = {};
+  function setText(el, key, txt) {
+    if (lastText[key] !== txt) { el.textContent = txt; lastText[key] = txt; }
+  }
+  function fillResult(el, main, sub, quiet) {
+    while (el.firstChild) el.removeChild(el.firstChild);
+    var a = document.createElement('span');
+    a.className = quiet ? 'main quiet' : 'main';
+    (Array.isArray(main) ? main : [main]).forEach(function (part) {
+      if (typeof part === 'string') { a.appendChild(document.createTextNode(part)); return; }
+      var w = document.createElement('span');
+      w.className = 'nw';
+      w.textContent = part.nw;
+      a.appendChild(w);
+    });
+    el.appendChild(a);
+    if (sub) {
+      var b = document.createElement('span');
+      b.className = 'sub';
+      b.textContent = sub;
+      el.appendChild(b);
+    }
+  }
+  function setResult(main, sub, quiet) {
+    fillResult(resultEl, main, sub, quiet);
+    reportHeight();
+  }
+  // Keep room for the tallest message at this width, so the grid never jumps when one replaces another.
+  function sizeResult() {
+    var h = 0;
+    [[HINT_RESULT, ''], [inOld(), ''], [oldText(base.ok), ''], [IN_NEW, ''], [newText(), newSub()]].forEach(function (m) {
+      fillResult(probeEl, m[0], m[1], false);
+      h = Math.max(h, probeEl.getBoundingClientRect().height);
+    });
+    while (probeEl.firstChild) probeEl.removeChild(probeEl.firstChild);
+    resultEl.style.minHeight = Math.ceil(h) + 'px';
+  }
+  function updateCounters() {
+    setText(elLooked, 'looked', 'Looked at ' + fmt(S.looked) + ' of ' + fmt(N));
+    setText(elSkipped, 'skipped', 'Skipped ' + fmt(S.skipped));
+    setText(elLabeled, 'labeled', 'Labeled ' + fmt(S.labeled));
+  }
+  function sizeCounters() {
+    [[elLooked, 'Looked at ' + fmt(N) + ' of ' + fmt(N)], [elSkipped, 'Skipped ' + fmt(N)], [elLabeled, 'Labeled ' + fmt(N)]].forEach(function (p) {
+      var el = p[0], keep = el.textContent;
+      el.style.minWidth = '0px';
+      el.textContent = p[1];
+      var w = el.getBoundingClientRect().width;
+      el.textContent = keep;
+      el.style.minWidth = Math.ceil(w) + 'px';
+    });
+  }
+  function setNote() { setText(noteEl, 'note', S.mode === 'new' ? noteNew() : NOTE_OLD); }
+  function setGridLabel() {
+    var t;
+    if (S.mode === 'new') {
+      t = fmt(N) + ' cells, one per issue the fixed query returns. All of them can be labeled, and one run labels the first ' + fmt(CAP) + '.';
+    } else {
+      var parts = legendKinds.filter(function (k) { return k !== 'ok'; }).map(function (k) {
+        return fmt(base[k]) + ' ' + KINDS[k].aria;
+      });
+      t = fmt(N) + ' cells, one per open issue in the order the sweep reads them. Skipped every run, ' +
+        joinList(parts) + '. ' + fmt(base.ok) + ' can be labeled.';
+    }
+    canvas.setAttribute('aria-label', t + ' Arrow keys move between cells.');
+  }
+  function setNext(btn) {
+    btnOld.classList.toggle('next', btn === btnOld);
+    btnNew.classList.toggle('next', btn === btnNew);
+  }
+
+  var hover = -1, selected = -1;
+  function focusIndex() { return hover >= 0 ? hover : selected; }
+  function keyboardFocus() {
+    try { return canvas.matches(':focus-visible'); } catch (err) { return document.activeElement === canvas; }
+  }
+  function refreshInfo(now) {
+    var i = focusIndex(), t;
+    if (i < 0 || i >= N) {
+      t = keyboardFocus() ? 'Arrow keys move between cells.' : HINT_INFO;
+    } else {
+      var v = shown(i, now) || { code: S.codes[i], lab: false, fixed: S.mode === 'new' };
+      t = 'Slot ' + fmt(i + 1) + ' of ' + fmt(N) + ' \u00b7 ';
+      if (v.code === 'ok') {
+        t += v.lab ? 'Labeled stale' : (v.fixed ? (i >= CAP ? 'From the fixed query - waits for the next run' : 'From the fixed query - can be labeled') : 'Can be labeled');
+      } else {
+        t += KINDS[v.code].info;
+      }
+    }
+    infoEl.classList.toggle('quiet', i < 0 || i >= N);
+    setText(infoEl, 'info', t);
+  }
+
+  // ---- animation loop ----
+  // Drawing is a function of time, so a slow timer can stand in when frames stall
+  // (throttled tabs, headless screenshots). It only starts after the first real frame,
+  // so an iframe that loads offscreen still plays its load animation when scrolled to.
+  var rafId = 0, backupId = 0;
+  function requestDraw() { if (!rafId) rafId = requestAnimationFrame(tick); }
+
+  function stepScan(now) {
+    var sc = S.scan;
+    if (!sc || sc.done || sc.t0 < 0 || now < sc.t0) return;
+    var end = sc.kind === 'new' ? CAP : N;
+    var head = Math.min(end, Math.floor((now - sc.t0) / MS_PER_CELL) + 1);
+    for (var i = S.looked; i < head; i++) {
+      var t = sc.t0 + i * MS_PER_CELL;
+      S.seenAt[i] = t;
+      if (S.codes[i] === 'ok') { S.labAt[i] = t; S.labeled++; } else S.skipped++;
+    }
+    if (head > S.looked) {
+      S.looked = head;
+      S.fxEnd = Math.max(S.fxEnd, now + Math.max(BLINK_MS, POP_MS));
+    }
+    if (S.looked >= end) { sc.done = true; finish(sc.kind); }
+  }
+
+  function tick(now) {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = 0;
+    clearTimeout(backupId);
+    backupId = 0;
+    var ap = S.appear;
+    if (ap && ap.t0 < 0) {
+      ap.t0 = now;
+      ap.end = now + ap.dur;
+      if (S.scan && S.scan.t0 < 0) S.scan.t0 = ap.end + 150;
+    }
+    stepScan(now);
+    draw(now);
+    updateCounters();
+    refreshInfo(now);
+    var busy = (ap && now < ap.end + 20) || (S.scan && !S.scan.done) || now < S.fxEnd;
+    if (ap && now >= ap.end + 20) S.appear = null;
+    if (busy) {
+      rafId = requestAnimationFrame(tick);
+      backupId = setTimeout(function () { tick(performance.now()); }, 250);
+    }
+  }
+
+  function finish(kind) {
+    if (kind === 'old') { setResult(oldText(S.labeled), '', false); setNext(btnNew); }
+    else { setResult(newText(), newSub(), false); setNext(null); }
+  }
+
+  // ---- actions ----
+  function runSweep(kind) {
+    if (!N) return;
+    if (S.scan && !S.scan.done && S.scan.kind === kind) return;
+    var now = performance.now();
+    var swap = S.mode !== kind;
+    if (swap) {
+      // Start the refill from what is on screen right now, even if a load or refill is still playing.
+      var prev = [], pl = new Uint8Array(N), pf = new Uint8Array(N);
+      for (var i = 0; i < N; i++) {
+        var v = shown(i, now);
+        prev.push(v ? v.code : null);
+        pl[i] = v && v.lab ? 1 : 0;
+        pf[i] = v && v.fixed ? 1 : 0;
+      }
+      S.prev = prev;
+      S.prevLab = pl;
+      S.prevFixed = pf;
+      S.codes = (kind === 'new' ? fixedCodes : win).slice();
+      S.mode = kind;
+    }
+    clearScan();
+    setNext(null);
+    updateLegend();
+    setNote();
+    setGridLabel();
+    if (reduced()) {
+      S.appear = null;
+      var stop = kind === 'new' ? CAP : N;
+      for (var j = 0; j < stop; j++) {
+        if (S.codes[j] === 'ok') { S.labAt[j] = -Infinity; S.labeled++; } else S.skipped++;
+      }
+      S.looked = stop;
+      S.scan = { kind: kind, t0: 0, done: true };
+      finish(kind);
+      updateCounters();
+      refreshInfo(now);
+      requestDraw();
+      return;
+    }
+    var start;
+    if (swap) {
+      S.appear = { kind: 'refill', t0: now, dur: REFILL_MS, end: now + REFILL_MS };
+      start = S.appear.end + 150;
+    } else if (S.appear) {
+      start = S.appear.t0 < 0 ? -1 : S.appear.end + 150;
+    } else {
+      start = now + 120;
+    }
+    S.scan = { kind: kind, t0: start, done: false };
+    setResult(kind === 'new' ? IN_NEW : inOld(), '', true);
+    updateCounters();
+    refreshInfo(now);
+    requestDraw();
+  }
+
+  function reset() {
+    if (!N) return;
+    S.mode = 'old';
+    S.codes = win.slice();
+    S.prev = null;
+    S.prevLab = null;
+    S.prevFixed = null;
+    S.scan = null;
+    clearScan();
+    selected = -1;
+    S.appear = reduced() ? null : { kind: 'pages', t0: -1, dur: PAGES_MS, end: Infinity };
+    setResult(HINT_RESULT, '', true);
+    setNext(btnOld);
+    updateLegend();
+    setNote();
+    setGridLabel();
+    updateCounters();
+    refreshInfo(performance.now());
+    requestDraw();
+  }
+
+  // ---- input ----
+  function cellAt(clientX, clientY) {
+    if (!L.ready) return -1;
+    var b = canvas.getBoundingClientRect();
+    var x = (clientX - b.left) * L.dpr - L.Pd, y = (clientY - b.top) * L.dpr - L.Pd;
+    if (x < 0 || y < 0) return -1;
+    var col = Math.floor(x / L.pd), row = Math.floor(y / L.pd);
+    if (col >= L.cols || row >= L.rows) return -1;
+    var i = row * L.cols + col;
+    return i < N ? i : -1;
+  }
+  canvas.addEventListener('pointermove', function (e) {
+    if (e.pointerType === 'touch') return;
+    var i = cellAt(e.clientX, e.clientY);
+    if (i !== hover) { hover = i; refreshInfo(performance.now()); requestDraw(); }
+  });
+  canvas.addEventListener('pointerleave', function () {
+    if (hover >= 0) { hover = -1; refreshInfo(performance.now()); requestDraw(); }
+  });
+  canvas.addEventListener('click', function (e) {
+    var i = cellAt(e.clientX, e.clientY);
+    selected = i === selected ? -1 : i;
+    refreshInfo(performance.now());
+    requestDraw();
+  });
+  canvas.addEventListener('keydown', function (e) {
+    var k = e.key, next = selected;
+    var step = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -L.cols, ArrowDown: L.cols };
+    if (k === 'Escape') {
+      if (selected < 0) return;
+      next = -1;
+    } else if (has.call(step, k)) {
+      next = selected < 0 ? 0 : selected + step[k];
+      if (next < 0 || next >= N) next = selected;
+    } else if (k === 'Home') {
+      next = 0;
+    } else if (k === 'End') {
+      next = N - 1;
+    } else {
+      return;
+    }
+    e.preventDefault();
+    selected = next;
+    hover = -1;
+    refreshInfo(performance.now());
+    requestDraw();
+  });
+  canvas.addEventListener('focus', function () { refreshInfo(performance.now()); });
+  canvas.addEventListener('blur', function () { refreshInfo(performance.now()); });
+
+  btnOld.addEventListener('click', function () { runSweep('old'); });
+  btnNew.addEventListener('click', function () { runSweep('new'); });
+  btnReset.addEventListener('click', reset);
+
+  var darkMq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function onTheme() { readColors(); drawSwatches(); requestDraw(); }
+  if (darkMq) {
+    if (darkMq.addEventListener) darkMq.addEventListener('change', onTheme);
+    else if (darkMq.addListener) darkMq.addListener(onTheme);
+  }
+  if (window.ResizeObserver) new ResizeObserver(function () { layout(false); }).observe(wrap);
+  window.addEventListener('resize', function () { layout(false); });
+
+  // ---- start ----
+  readColors();
+  if (!N) {
+    ['.legend', '.controls', '.status', '#info', '#wrap', '#note'].forEach(function (sel) {
+      var el = document.querySelector(sel);
+      if (el) el.style.display = 'none';
+    });
+    setResult('The data for this figure did not load.', '', true);
+    reportHeight();
+    return;
+  }
+  buildLegend();
+  updateCounters();
+  layout(true);
+  reset();
+  reportHeight();
+})();
+</script>
+</body>
+</html>

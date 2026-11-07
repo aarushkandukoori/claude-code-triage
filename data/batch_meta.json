@@ -1,0 +1,5006 @@
+{
+ "latest": "2.1.319",
+ "latest_date": "2026-11-06",
+ "issues": {
+  "105370": {
+   "reported_version": "2.1.311",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "104857": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "92653": {
+   "reported_version": "2.1.263",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "91650": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "93442": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "104742": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "106441": {
+   "reported_version": "2.1.304",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "74547": {
+   "reported_version": "2.1.150",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "86205": {
+   "reported_version": "2.1.229",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "106905": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "106101": {
+   "reported_version": "2.1.312",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "94765": {
+   "reported_version": "2.1.274",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "77578": {
+   "reported_version": "2.1.209",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "23622": {
+   "reported_version": "2.1.34",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "100442": {
+   "reported_version": "2.1.295",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "107247": {
+   "reported_version": "2.1.316",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "95970": {
+   "reported_version": "2.1.274",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "36168": {
+   "reported_version": "2.1.77",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "91655": {
+   "reported_version": "2.1.260",
+   "version_source": "inferred from date",
+   "batch": 0
+  },
+  "92974": {
+   "reported_version": "2.1.247",
+   "version_source": "stated",
+   "batch": 0
+  },
+  "2511": {
+   "reported_version": "1.0.34",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "99474": {
+   "reported_version": "2.1.285",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "94106": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "92120": {
+   "reported_version": "2.1.258",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "94639": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "101336": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "102770": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "79706": {
+   "reported_version": "2.1.217",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "106875": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "107943": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "30027": {
+   "reported_version": "2.1.50",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "98095": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "103574": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "90064": {
+   "reported_version": "2.1.247",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "107212": {
+   "reported_version": "2.1.318",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "38005": {
+   "reported_version": "2.1.81",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "48181": {
+   "reported_version": "2.1.108",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "106919": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 1
+  },
+  "100410": {
+   "reported_version": "2.1.295",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "98800": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 1
+  },
+  "22543": {
+   "reported_version": "2.1.29",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "105170": {
+   "reported_version": "2.1.310",
+   "version_source": "stated",
+   "batch": 2
+  },
+  "104725": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "84792": {
+   "reported_version": "2.1.225",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "96898": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "30154": {
+   "reported_version": "2.1.63",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "95472": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "95386": {
+   "reported_version": "2.1.276",
+   "version_source": "stated",
+   "batch": 2
+  },
+  "104266": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "104677": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "96238": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 2
+  },
+  "103241": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 2
+  },
+  "98643": {
+   "reported_version": "2.1.286",
+   "version_source": "stated",
+   "batch": 2
+  },
+  "105019": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "14280": {
+   "reported_version": "2.0.72",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "94693": {
+   "reported_version": "2.1.274",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "94085": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "80093": {
+   "reported_version": "2.1.217",
+   "version_source": "stated",
+   "batch": 2
+  },
+  "107535": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "96702": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 2
+  },
+  "43113": {
+   "reported_version": "2.1.91",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "18949": {
+   "reported_version": "2.1.12",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "107345": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "63025": {
+   "reported_version": "2.1.156",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "95975": {
+   "reported_version": "2.1.278",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "92338": {
+   "reported_version": "2.1.261",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "80906": {
+   "reported_version": "2.1.218",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "26224": {
+   "reported_version": "2.1.38",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "75692": {
+   "reported_version": "2.1.205",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "104311": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "77261": {
+   "reported_version": "2.1.207",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "104761": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "104466": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "100326": {
+   "reported_version": "2.1.293",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "104358": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "26784": {
+   "reported_version": "2.1.49",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "103452": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "88877": {
+   "reported_version": "2.1.240",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "103571": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 3
+  },
+  "79722": {
+   "reported_version": "2.1.206",
+   "version_source": "stated",
+   "batch": 3
+  },
+  "15881": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "100437": {
+   "reported_version": "2.1.294",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "83768": {
+   "reported_version": "2.1.221",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "27957": {
+   "reported_version": "2.1.51",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "33165": {
+   "reported_version": "2.1.74",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "108002": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "99688": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "100608": {
+   "reported_version": "2.1.295",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "106109": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "96698": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "74260": {
+   "reported_version": "2.1.201",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "93526": {
+   "reported_version": "2.1.269",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "82134": {
+   "reported_version": "2.1.219",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "88285": {
+   "reported_version": "2.1.238",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "101741": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "96020": {
+   "reported_version": "2.1.59",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "77873": {
+   "reported_version": "2.1.211",
+   "version_source": "inferred from date",
+   "batch": 4
+  },
+  "87012": {
+   "reported_version": "2.1.232",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "95651": {
+   "reported_version": "2.1.258",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "96343": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 4
+  },
+  "63725": {
+   "reported_version": "2.1.157",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "105006": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 5
+  },
+  "96684": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "94114": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "107973": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "46987": {
+   "reported_version": "2.1.92",
+   "version_source": "stated",
+   "batch": 5
+  },
+  "104090": {
+   "reported_version": "2.1.307",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "102276": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "94878": {
+   "reported_version": "2.1.272",
+   "version_source": "stated",
+   "batch": 5
+  },
+  "108061": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "94066": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "91547": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "90494": {
+   "reported_version": "2.1.248",
+   "version_source": "stated",
+   "batch": 5
+  },
+  "107175": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "98349": {
+   "reported_version": "2.1.285",
+   "version_source": "stated",
+   "batch": 5
+  },
+  "92470": {
+   "reported_version": "2.1.263",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "103881": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 5
+  },
+  "99452": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "91964": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "105603": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 5
+  },
+  "104584": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "8660": {
+   "reported_version": "2.0.1",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "95497": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "93260": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "97559": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "16274": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "98708": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "24122": {
+   "reported_version": "2.1.37",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "99285": {
+   "reported_version": "2.1.288",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "104415": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "94305": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "102055": {
+   "reported_version": "2.1.300",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "83665": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "105064": {
+   "reported_version": "2.1.310",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "14061": {
+   "reported_version": "2.0.69",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "95387": {
+   "reported_version": "2.1.271",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "76303": {
+   "reported_version": "2.1.206",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "71542": {
+   "reported_version": "2.1.195",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "104082": {
+   "reported_version": "2.1.306",
+   "version_source": "stated",
+   "batch": 6
+  },
+  "79218": {
+   "reported_version": "2.1.215",
+   "version_source": "inferred from date",
+   "batch": 6
+  },
+  "106618": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "102407": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "103377": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "98694": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "94312": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "102425": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "101991": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "78720": {
+   "reported_version": "2.1.212",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "105624": {
+   "reported_version": "2.1.312",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "85421": {
+   "reported_version": "2.1.226",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "12346": {
+   "reported_version": "2.0.54",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "48322": {
+   "reported_version": "2.1.110",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "101632": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "99942": {
+   "reported_version": "2.1.292",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "98584": {
+   "reported_version": "2.1.286",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "90867": {
+   "reported_version": "2.1.252",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "103507": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "89894": {
+   "reported_version": "2.1.247",
+   "version_source": "inferred from date",
+   "batch": 7
+  },
+  "65833": {
+   "reported_version": "2.1.150",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "5140": {
+   "reported_version": "1.0.68",
+   "version_source": "stated",
+   "batch": 7
+  },
+  "15942": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "102528": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "37628": {
+   "reported_version": "2.1.81",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "90630": {
+   "reported_version": "2.1.246",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "93811": {
+   "reported_version": "2.1.266",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "93857": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "68809": {
+   "reported_version": "2.1.179",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "73107": {
+   "reported_version": "2.1.199",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "15148": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "77751": {
+   "reported_version": "2.1.210",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "81317": {
+   "reported_version": "2.1.220",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "98493": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "89370": {
+   "reported_version": "2.1.246",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "98490": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "90122": {
+   "reported_version": "2.1.247",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "99590": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "106038": {
+   "reported_version": "2.1.312",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "88418": {
+   "reported_version": "2.1.239",
+   "version_source": "inferred from date",
+   "batch": 8
+  },
+  "3301": {
+   "reported_version": "1.0.25",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "102449": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 8
+  },
+  "107219": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "106323": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "105221": {
+   "reported_version": "2.1.310",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "29214": {
+   "reported_version": "2.1.62",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "95541": {
+   "reported_version": "2.1.276",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "98344": {
+   "reported_version": "2.1.285",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "102312": {
+   "reported_version": "2.1.300",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "84260": {
+   "reported_version": "2.1.223",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "104946": {
+   "reported_version": "2.1.310",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "4556": {
+   "reported_version": "1.0.61",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "105129": {
+   "reported_version": "2.1.311",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "98123": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "85026": {
+   "reported_version": "2.1.226",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "72215": {
+   "reported_version": "2.1.195",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "1455": {
+   "reported_version": "1.0.7",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "93115": {
+   "reported_version": "2.1.265",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "87647": {
+   "reported_version": "2.1.233",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "101903": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "96408": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 9
+  },
+  "96417": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 9
+  },
+  "91592": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "93765": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "99232": {
+   "reported_version": "2.1.288",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "104246": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "10375": {
+   "reported_version": "2.0.27",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "106765": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "97833": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "99735": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "103323": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "104261": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "93350": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "22265": {
+   "reported_version": "2.1.27",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "95271": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "103788": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "104157": {
+   "reported_version": "2.1.307",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "91371": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "93093": {
+   "reported_version": "2.1.267",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "96387": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 10
+  },
+  "99427": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "106215": {
+   "reported_version": "2.1.315",
+   "version_source": "inferred from date",
+   "batch": 10
+  },
+  "93529": {
+   "reported_version": "2.1.268",
+   "version_source": "stated",
+   "batch": 11
+  },
+  "100531": {
+   "reported_version": "2.1.286",
+   "version_source": "stated",
+   "batch": 11
+  },
+  "107859": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "104289": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 11
+  },
+  "104234": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "104851": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "93684": {
+   "reported_version": "2.1.268",
+   "version_source": "stated",
+   "batch": 11
+  },
+  "107148": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "47509": {
+   "reported_version": "2.1.105",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "104659": {
+   "reported_version": "2.1.300",
+   "version_source": "stated",
+   "batch": 11
+  },
+  "99546": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "90379": {
+   "reported_version": "2.1.251",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "95299": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "18467": {
+   "reported_version": "2.1.9",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "93392": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "73638": {
+   "reported_version": "2.1.199",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "104340": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "94314": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 11
+  },
+  "98801": {
+   "reported_version": "2.1.287",
+   "version_source": "stated",
+   "batch": 11
+  },
+  "106236": {
+   "reported_version": "2.1.300",
+   "version_source": "stated",
+   "batch": 11
+  },
+  "98926": {
+   "reported_version": "2.1.288",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "93703": {
+   "reported_version": "2.1.269",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "98149": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "97370": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "106757": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "91385": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "96444": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "102026": {
+   "reported_version": "2.1.300",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "100300": {
+   "reported_version": "2.1.293",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "106396": {
+   "reported_version": "2.1.316",
+   "version_source": "stated",
+   "batch": 12
+  },
+  "92041": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "91969": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 12
+  },
+  "105413": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "31480": {
+   "reported_version": "2.1.71",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "83380": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 12
+  },
+  "106931": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "98106": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "96169": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 12
+  },
+  "107634": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 12
+  },
+  "86198": {
+   "reported_version": "2.1.226",
+   "version_source": "stated",
+   "batch": 12
+  },
+  "104141": {
+   "reported_version": "2.1.306",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "105340": {
+   "reported_version": "2.1.304",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "97243": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 13
+  },
+  "94799": {
+   "reported_version": "2.1.273",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "96519": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "93152": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "107224": {
+   "reported_version": "2.1.318",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "93421": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 13
+  },
+  "84862": {
+   "reported_version": "2.1.225",
+   "version_source": "inferred from date",
+   "batch": 13
+  },
+  "11315": {
+   "reported_version": "2.0.36",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "97441": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 13
+  },
+  "1757": {
+   "reported_version": "1.0.9",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "91644": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "99259": {
+   "reported_version": "2.1.287",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "93796": {
+   "reported_version": "2.1.268",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "52924": {
+   "reported_version": "2.1.119",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "20697": {
+   "reported_version": "2.1.19",
+   "version_source": "inferred from date",
+   "batch": 13
+  },
+  "96353": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 13
+  },
+  "104348": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 13
+  },
+  "93477": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 13
+  },
+  "101953": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "106259": {
+   "reported_version": "2.1.315",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "14002": {
+   "reported_version": "2.0.69",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "100697": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "85027": {
+   "reported_version": "2.1.226",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "93469": {
+   "reported_version": "2.1.267",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "102101": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "94868": {
+   "reported_version": "2.1.274",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "105942": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "91242": {
+   "reported_version": "2.1.252",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "107779": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "32982": {
+   "reported_version": "2.1.72",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "83789": {
+   "reported_version": "2.1.222",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "12619": {
+   "reported_version": "2.0.55",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "95403": {
+   "reported_version": "2.1.272",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "107213": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "96241": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "92980": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 14
+  },
+  "12962": {
+   "reported_version": "2.0.58",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "82360": {
+   "reported_version": "2.1.220",
+   "version_source": "inferred from date",
+   "batch": 14
+  },
+  "103856": {
+   "reported_version": "2.1.305",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "92743": {
+   "reported_version": "2.1.263",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "85018": {
+   "reported_version": "2.1.226",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "102264": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "88188": {
+   "reported_version": "2.1.237",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "94464": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "104886": {
+   "reported_version": "2.1.310",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "104339": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "82184": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "106773": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "102663": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "106297": {
+   "reported_version": "2.1.315",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "102940": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "102708": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "4462": {
+   "reported_version": "1.0.61",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "92411": {
+   "reported_version": "2.1.263",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "96723": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "96552": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 15
+  },
+  "106087": {
+   "reported_version": "2.1.301",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "104868": {
+   "reported_version": "2.1.307",
+   "version_source": "stated",
+   "batch": 15
+  },
+  "107374": {
+   "reported_version": "2.1.318",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "87963": {
+   "reported_version": "2.1.235",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "106278": {
+   "reported_version": "2.1.315",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "92842": {
+   "reported_version": "2.1.266",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "107829": {
+   "reported_version": "2.1.318",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "104359": {
+   "reported_version": "2.1.307",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "86858": {
+   "reported_version": "2.1.232",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "97876": {
+   "reported_version": "2.1.284",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "107997": {
+   "reported_version": "2.1.318",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "92020": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "91681": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "38335": {
+   "reported_version": "2.1.42",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "96259": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "94224": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "98475": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "99242": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "101490": {
+   "reported_version": "2.1.287",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "94267": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 16
+  },
+  "105725": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "87984": {
+   "reported_version": "2.1.237",
+   "version_source": "inferred from date",
+   "batch": 16
+  },
+  "103658": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 17
+  },
+  "93738": {
+   "reported_version": "2.1.269",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "104730": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "91870": {
+   "reported_version": "2.1.260",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "98717": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "98625": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "2939": {
+   "reported_version": "1.0.43",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "94138": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "99326": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "91110": {
+   "reported_version": "2.1.258",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "98019": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 17
+  },
+  "19877": {
+   "reported_version": "2.1.15",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "95842": {
+   "reported_version": "2.1.272",
+   "version_source": "stated",
+   "batch": 17
+  },
+  "105001": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "14818": {
+   "reported_version": "2.0.75",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "1234": {
+   "reported_version": "1.0.2",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "94388": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "32726": {
+   "reported_version": "2.1.72",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "28729": {
+   "reported_version": "2.1.59",
+   "version_source": "inferred from date",
+   "batch": 17
+  },
+  "92244": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 17
+  },
+  "99215": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "107317": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "104731": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "95777": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "93719": {
+   "reported_version": "2.1.269",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "105012": {
+   "reported_version": "2.1.306",
+   "version_source": "stated",
+   "batch": 18
+  },
+  "102646": {
+   "reported_version": "2.1.301",
+   "version_source": "stated",
+   "batch": 18
+  },
+  "100116": {
+   "reported_version": "2.1.293",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "100080": {
+   "reported_version": "2.1.288",
+   "version_source": "stated",
+   "batch": 18
+  },
+  "29579": {
+   "reported_version": "2.1.63",
+   "version_source": "stated",
+   "batch": 18
+  },
+  "106983": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "4851": {
+   "reported_version": "1.0.65",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "105911": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "96866": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "89262": {
+   "reported_version": "2.1.237",
+   "version_source": "stated",
+   "batch": 18
+  },
+  "105881": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "103999": {
+   "reported_version": "2.1.306",
+   "version_source": "stated",
+   "batch": 18
+  },
+  "103617": {
+   "reported_version": "2.1.305",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "100184": {
+   "reported_version": "2.1.293",
+   "version_source": "inferred from date",
+   "batch": 18
+  },
+  "94343": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 18
+  },
+  "96342": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 19
+  },
+  "23416": {
+   "reported_version": "2.1.31",
+   "version_source": "stated",
+   "batch": 19
+  },
+  "96689": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "82489": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 19
+  },
+  "101710": {
+   "reported_version": "2.1.295",
+   "version_source": "stated",
+   "batch": 19
+  },
+  "101591": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "92794": {
+   "reported_version": "2.1.263",
+   "version_source": "stated",
+   "batch": 19
+  },
+  "107661": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "106343": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "98578": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "92522": {
+   "reported_version": "2.1.263",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "94123": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "104990": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "99755": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "98248": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "106825": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "106218": {
+   "reported_version": "2.1.310",
+   "version_source": "stated",
+   "batch": 19
+  },
+  "80702": {
+   "reported_version": "2.1.218",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "99586": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "93417": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 19
+  },
+  "91828": {
+   "reported_version": "2.1.241",
+   "version_source": "stated",
+   "batch": 20
+  },
+  "13585": {
+   "reported_version": "2.0.64",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "94488": {
+   "reported_version": "2.1.273",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "106379": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "101510": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "95605": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "100724": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "107733": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "91957": {
+   "reported_version": "2.1.228",
+   "version_source": "stated",
+   "batch": 20
+  },
+  "100490": {
+   "reported_version": "2.1.292",
+   "version_source": "stated",
+   "batch": 20
+  },
+  "93002": {
+   "reported_version": "2.1.267",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "28330": {
+   "reported_version": "2.1.59",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "62199": {
+   "reported_version": "2.1.150",
+   "version_source": "stated",
+   "batch": 20
+  },
+  "30519": {
+   "reported_version": "2.1.63",
+   "version_source": "stated",
+   "batch": 20
+  },
+  "29388": {
+   "reported_version": "2.1.62",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "106014": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "45937": {
+   "reported_version": "2.1.98",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "97171": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 20
+  },
+  "104766": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 20
+  },
+  "89223": {
+   "reported_version": "2.1.241",
+   "version_source": "stated",
+   "batch": 20
+  },
+  "102682": {
+   "reported_version": "2.1.301",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "92295": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "80806": {
+   "reported_version": "2.1.218",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "92089": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "96310": {
+   "reported_version": "2.1.278",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "101348": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "16128": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "94789": {
+   "reported_version": "2.1.274",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "101016": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "83795": {
+   "reported_version": "2.1.218",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "105819": {
+   "reported_version": "2.1.311",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "27848": {
+   "reported_version": "2.1.50",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "89489": {
+   "reported_version": "2.1.245",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "102279": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "101274": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "94557": {
+   "reported_version": "2.1.271",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "1785": {
+   "reported_version": "1.0.17",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "96553": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "103764": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 21
+  },
+  "2254": {
+   "reported_version": "1.0.29",
+   "version_source": "inferred from date",
+   "batch": 21
+  },
+  "99634": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "62699": {
+   "reported_version": "2.1.152",
+   "version_source": "stated",
+   "batch": 22
+  },
+  "36151": {
+   "reported_version": "2.1.80",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "26904": {
+   "reported_version": "2.1.49",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "92550": {
+   "reported_version": "2.1.263",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "85511": {
+   "reported_version": "2.1.227",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "100909": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "40043": {
+   "reported_version": "2.1.86",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "99295": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 22
+  },
+  "93534": {
+   "reported_version": "2.1.269",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "102639": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "45756": {
+   "reported_version": "2.1.97",
+   "version_source": "stated",
+   "batch": 22
+  },
+  "105536": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "99389": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "102501": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "107682": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "9716": {
+   "reported_version": "2.0.21",
+   "version_source": "stated",
+   "batch": 22
+  },
+  "100227": {
+   "reported_version": "2.1.293",
+   "version_source": "inferred from date",
+   "batch": 22
+  },
+  "100451": {
+   "reported_version": "2.1.293",
+   "version_source": "stated",
+   "batch": 22
+  },
+  "16270": {
+   "reported_version": "2.0.76",
+   "version_source": "stated",
+   "batch": 22
+  },
+  "100001": {
+   "reported_version": "2.1.292",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "104754": {
+   "reported_version": "2.1.307",
+   "version_source": "stated",
+   "batch": 23
+  },
+  "103988": {
+   "reported_version": "2.1.307",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "7490": {
+   "reported_version": "1.0.112",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "105029": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "91720": {
+   "reported_version": "2.1.260",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "95963": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "102862": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "106666": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "57371": {
+   "reported_version": "2.1.136",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "1669": {
+   "reported_version": "1.0.15",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "100426": {
+   "reported_version": "2.1.295",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "105967": {
+   "reported_version": "2.1.312",
+   "version_source": "stated",
+   "batch": 23
+  },
+  "101500": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 23
+  },
+  "34229": {
+   "reported_version": "2.1.76",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "12925": {
+   "reported_version": "2.0.58",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "30021": {
+   "reported_version": "2.1.63",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "97417": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 23
+  },
+  "91632": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "14200": {
+   "reported_version": "2.0.71",
+   "version_source": "inferred from date",
+   "batch": 23
+  },
+  "102273": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "106713": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "102030": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "91941": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "2118": {
+   "reported_version": "1.0.24",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "95791": {
+   "reported_version": "2.1.278",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "35637": {
+   "reported_version": "2.1.77",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "13600": {
+   "reported_version": "2.0.64",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "97651": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "101549": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "104336": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "100074": {
+   "reported_version": "2.1.292",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "94003": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "100659": {
+   "reported_version": "2.1.294",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "105036": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "14634": {
+   "reported_version": "2.0.72",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "50270": {
+   "reported_version": "2.1.113",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "99407": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "105645": {
+   "reported_version": "2.1.311",
+   "version_source": "stated",
+   "batch": 24
+  },
+  "90341": {
+   "reported_version": "2.1.251",
+   "version_source": "inferred from date",
+   "batch": 24
+  },
+  "86879": {
+   "reported_version": "2.1.233",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "95529": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "88293": {
+   "reported_version": "2.1.238",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "21151": {
+   "reported_version": "2.1.20",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "98859": {
+   "reported_version": "2.1.288",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "96355": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "106818": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "94165": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "100595": {
+   "reported_version": "2.1.294",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "95482": {
+   "reported_version": "2.1.277",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "107659": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "94372": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "104571": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "105122": {
+   "reported_version": "2.1.311",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "106903": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 25
+  },
+  "105779": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "89161": {
+   "reported_version": "2.1.241",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "101902": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "99620": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "29017": {
+   "reported_version": "2.1.59",
+   "version_source": "stated",
+   "batch": 25
+  },
+  "82434": {
+   "reported_version": "2.1.220",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "30031": {
+   "reported_version": "2.1.63",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "18170": {
+   "reported_version": "2.1.7",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "91364": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "92386": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "93732": {
+   "reported_version": "2.1.269",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "4953": {
+   "reported_version": "1.0.53",
+   "version_source": "stated",
+   "batch": 26
+  },
+  "102846": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 26
+  },
+  "98881": {
+   "reported_version": "2.1.288",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "92583": {
+   "reported_version": "2.1.263",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "98682": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "97283": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "27302": {
+   "reported_version": "2.1.50",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "103773": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 26
+  },
+  "93040": {
+   "reported_version": "2.1.267",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "77084": {
+   "reported_version": "2.1.208",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "105792": {
+   "reported_version": "2.1.312",
+   "version_source": "stated",
+   "batch": 26
+  },
+  "92639": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 26
+  },
+  "94073": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 26
+  },
+  "103692": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 26
+  },
+  "94636": {
+   "reported_version": "2.1.274",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "101747": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "82056": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "105863": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "96175": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "103425": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "107896": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "81128": {
+   "reported_version": "2.1.220",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "95734": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "97600": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "86139": {
+   "reported_version": "2.1.197",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "38993": {
+   "reported_version": "2.1.78",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "107864": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "46621": {
+   "reported_version": "2.1.101",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "102216": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "91617": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "106612": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "106734": {
+   "reported_version": "2.1.316",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "94555": {
+   "reported_version": "2.1.272",
+   "version_source": "stated",
+   "batch": 27
+  },
+  "99085": {
+   "reported_version": "2.1.288",
+   "version_source": "inferred from date",
+   "batch": 27
+  },
+  "105944": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "91902": {
+   "reported_version": "2.1.260",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "95201": {
+   "reported_version": "2.1.275",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "103431": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "32469": {
+   "reported_version": "2.1.72",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "94336": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 28
+  },
+  "104354": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "95343": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "78143": {
+   "reported_version": "2.1.212",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "100908": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "96703": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "107958": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 28
+  },
+  "98201": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 28
+  },
+  "99774": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "96976": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 28
+  },
+  "96426": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "105627": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "107297": {
+   "reported_version": "2.1.317",
+   "version_source": "stated",
+   "batch": 28
+  },
+  "106423": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 28
+  },
+  "105937": {
+   "reported_version": "2.1.312",
+   "version_source": "stated",
+   "batch": 28
+  },
+  "96416": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "99078": {
+   "reported_version": "2.1.288",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "95258": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "106670": {
+   "reported_version": "2.1.317",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "99216": {
+   "reported_version": "2.1.269",
+   "version_source": "stated",
+   "batch": 29
+  },
+  "97860": {
+   "reported_version": "2.1.284",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "95418": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "107835": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "28240": {
+   "reported_version": "2.1.52",
+   "version_source": "stated",
+   "batch": 29
+  },
+  "14202": {
+   "reported_version": "2.0.70",
+   "version_source": "stated",
+   "batch": 29
+  },
+  "89603": {
+   "reported_version": "2.1.245",
+   "version_source": "stated",
+   "batch": 29
+  },
+  "102945": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "106326": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "16550": {
+   "reported_version": "2.1.1",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "106920": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "29045": {
+   "reported_version": "2.1.61",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "100286": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 29
+  },
+  "97655": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 29
+  },
+  "96900": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "100750": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 29
+  },
+  "102371": {
+   "reported_version": "2.1.300",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "103077": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "97706": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "32000": {
+   "reported_version": "2.1.71",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "95925": {
+   "reported_version": "2.1.263",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "38179": {
+   "reported_version": "2.1.83",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "62476": {
+   "reported_version": "2.1.150",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "44763": {
+   "reported_version": "2.1.94",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "103928": {
+   "reported_version": "2.1.303",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "71539": {
+   "reported_version": "2.1.191",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "94906": {
+   "reported_version": "2.1.275",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "5088": {
+   "reported_version": "1.0.68",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "96461": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "96705": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "105832": {
+   "reported_version": "2.1.312",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "106492": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "33350": {
+   "reported_version": "2.1.73",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "99117": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 30
+  },
+  "94362": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "96625": {
+   "reported_version": "2.1.278",
+   "version_source": "stated",
+   "batch": 30
+  },
+  "98455": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "95523": {
+   "reported_version": "2.1.274",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "93008": {
+   "reported_version": "2.1.267",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "105027": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "99341": {
+   "reported_version": "2.1.201",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "103906": {
+   "reported_version": "2.1.305",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "97412": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "103474": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "92098": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "98489": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "107687": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "96361": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "90887": {
+   "reported_version": "2.1.252",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "79793": {
+   "reported_version": "2.1.217",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "85548": {
+   "reported_version": "2.1.224",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "99547": {
+   "reported_version": "2.1.286",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "79753": {
+   "reported_version": "2.1.216",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "101789": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "99771": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 31
+  },
+  "37951": {
+   "reported_version": "2.1.81",
+   "version_source": "inferred from date",
+   "batch": 31
+  },
+  "96794": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "106891": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "3433": {
+   "reported_version": "1.0.51",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "6850": {
+   "reported_version": "1.0.98",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "33932": {
+   "reported_version": "2.1.75",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "99382": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "97480": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "46917": {
+   "reported_version": "2.1.100",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "105440": {
+   "reported_version": "2.1.304",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "102218": {
+   "reported_version": "2.1.295",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "98663": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "99017": {
+   "reported_version": "2.1.288",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "103922": {
+   "reported_version": "2.1.287",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "106412": {
+   "reported_version": "2.1.316",
+   "version_source": "stated",
+   "batch": 32
+  },
+  "98547": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "102537": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "104276": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "33037": {
+   "reported_version": "2.1.74",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "62123": {
+   "reported_version": "2.1.150",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "48158": {
+   "reported_version": "2.1.108",
+   "version_source": "inferred from date",
+   "batch": 32
+  },
+  "100002": {
+   "reported_version": "2.1.292",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "104368": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "95631": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "93923": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "107757": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "92400": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "105445": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 33
+  },
+  "107754": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "65961": {
+   "reported_version": "2.1.228",
+   "version_source": "stated",
+   "batch": 33
+  },
+  "96007": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "100755": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "93791": {
+   "reported_version": "2.1.76",
+   "version_source": "stated",
+   "batch": 33
+  },
+  "31901": {
+   "reported_version": "2.1.32",
+   "version_source": "stated",
+   "batch": 33
+  },
+  "24189": {
+   "reported_version": "2.1.37",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "101384": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 33
+  },
+  "100564": {
+   "reported_version": "2.1.295",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "99773": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "101851": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "826": {
+   "reported_version": "0.2.74",
+   "version_source": "stated",
+   "batch": 33
+  },
+  "103818": {
+   "reported_version": "2.1.305",
+   "version_source": "inferred from date",
+   "batch": 33
+  },
+  "99264": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "96047": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "78857": {
+   "reported_version": "2.1.214",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "92568": {
+   "reported_version": "2.1.263",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "77136": {
+   "reported_version": "2.1.197",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "95809": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "100782": {
+   "reported_version": "2.1.293",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "101937": {
+   "reported_version": "2.1.300",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "81138": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "104441": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "93287": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "92847": {
+   "reported_version": "2.1.263",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "95340": {
+   "reported_version": "2.1.276",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "92716": {
+   "reported_version": "2.1.261",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "98809": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "76561": {
+   "reported_version": "2.1.207",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "87053": {
+   "reported_version": "2.1.138",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "95922": {
+   "reported_version": "2.1.275",
+   "version_source": "stated",
+   "batch": 34
+  },
+  "89673": {
+   "reported_version": "2.1.247",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "10065": {
+   "reported_version": "2.0.25",
+   "version_source": "inferred from date",
+   "batch": 34
+  },
+  "10199": {
+   "reported_version": "2.0.25",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "101207": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "96263": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "101298": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "77697": {
+   "reported_version": "2.1.211",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "82311": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "103121": {
+   "reported_version": "2.1.303",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "84540": {
+   "reported_version": "2.1.223",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "76602": {
+   "reported_version": "2.1.185",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "99021": {
+   "reported_version": "2.1.286",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "101076": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "99450": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "92306": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "96384": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "97341": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "96966": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "107435": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "93031": {
+   "reported_version": "2.1.236",
+   "version_source": "stated",
+   "batch": 35
+  },
+  "54054": {
+   "reported_version": "2.1.121",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "93310": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 35
+  },
+  "96628": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "87940": {
+   "reported_version": "2.1.237",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "100986": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "27282": {
+   "reported_version": "2.1.50",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "99587": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "91394": {
+   "reported_version": "2.1.259",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "101660": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "9881": {
+   "reported_version": "2.0.22",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "97377": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "100788": {
+   "reported_version": "2.1.295",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "41788": {
+   "reported_version": "2.1.89",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "106369": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "96797": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "107836": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "104762": {
+   "reported_version": "2.1.310",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "96580": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "48949": {
+   "reported_version": "2.1.92",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "100895": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "96012": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 36
+  },
+  "88137": {
+   "reported_version": "2.1.237",
+   "version_source": "stated",
+   "batch": 36
+  },
+  "106039": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "102649": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "107066": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "24968": {
+   "reported_version": "2.1.39",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "91794": {
+   "reported_version": "2.1.212",
+   "version_source": "stated",
+   "batch": 37
+  },
+  "96093": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "96013": {
+   "reported_version": "2.1.278",
+   "version_source": "stated",
+   "batch": 37
+  },
+  "95687": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "96179": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "30675": {
+   "reported_version": "2.1.69",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "32479": {
+   "reported_version": "2.1.72",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "105108": {
+   "reported_version": "2.1.311",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "102484": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "98799": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "104765": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "86036": {
+   "reported_version": "2.1.228",
+   "version_source": "stated",
+   "batch": 37
+  },
+  "105648": {
+   "reported_version": "2.1.273",
+   "version_source": "stated",
+   "batch": 37
+  },
+  "43326": {
+   "reported_version": "2.1.92",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "93495": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 37
+  },
+  "102463": {
+   "reported_version": "2.1.301",
+   "version_source": "inferred from date",
+   "batch": 37
+  },
+  "79305": {
+   "reported_version": "2.1.215",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "19673": {
+   "reported_version": "2.1.15",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "9740": {
+   "reported_version": "2.0.21",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "99052": {
+   "reported_version": "2.1.287",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "93277": {
+   "reported_version": "2.1.267",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "28791": {
+   "reported_version": "2.1.61",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "97109": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "104232": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "98071": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "769": {
+   "reported_version": "0.2.69",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "28795": {
+   "reported_version": "2.1.61",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "16082": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "98722": {
+   "reported_version": "2.1.287",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "105490": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "29922": {
+   "reported_version": "2.1.63",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "49268": {
+   "reported_version": "2.1.111",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "95156": {
+   "reported_version": "2.1.275",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "79606": {
+   "reported_version": "2.1.216",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "18748": {
+   "reported_version": "2.1.12",
+   "version_source": "inferred from date",
+   "batch": 38
+  },
+  "75654": {
+   "reported_version": "2.1.201",
+   "version_source": "stated",
+   "batch": 38
+  },
+  "107304": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "94008": {
+   "reported_version": "2.1.245",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "99417": {
+   "reported_version": "2.1.288",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "96028": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "28986": {
+   "reported_version": "2.1.61",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "93895": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "93990": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "104480": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "93845": {
+   "reported_version": "2.1.268",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "97797": {
+   "reported_version": "2.1.284",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "106524": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "105337": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "16157": {
+   "reported_version": "2.0.76",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "102309": {
+   "reported_version": "2.1.300",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "100552": {
+   "reported_version": "2.1.288",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "99813": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "99119": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "96562": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 39
+  },
+  "100885": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "32733": {
+   "reported_version": "2.1.72",
+   "version_source": "inferred from date",
+   "batch": 39
+  },
+  "91963": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "107581": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "98952": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "93409": {
+   "reported_version": "2.1.267",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "97001": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "107126": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "41456": {
+   "reported_version": "2.1.89",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "1547": {
+   "reported_version": "1.0.10",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "89928": {
+   "reported_version": "2.1.246",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "87971": {
+   "reported_version": "2.1.235",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "70225": {
+   "reported_version": "2.1.187",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "98496": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "96149": {
+   "reported_version": "2.1.280",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "3172": {
+   "reported_version": "1.0.45",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "83274": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "100040": {
+   "reported_version": "2.1.289",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "83033": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "104254": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 40
+  },
+  "65216": {
+   "reported_version": "2.1.162",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "24055": {
+   "reported_version": "2.1.37",
+   "version_source": "stated",
+   "batch": 40
+  },
+  "108003": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "82833": {
+   "reported_version": "2.1.220",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "93676": {
+   "reported_version": "2.1.236",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "100652": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "93099": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "94321": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "101377": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "89656": {
+   "reported_version": "2.1.239",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "97492": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "94562": {
+   "reported_version": "2.1.273",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "36949": {
+   "reported_version": "2.1.81",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "89651": {
+   "reported_version": "2.1.245",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "97487": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "94045": {
+   "reported_version": "2.1.269",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "105994": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "53454": {
+   "reported_version": "2.1.120",
+   "version_source": "stated",
+   "batch": 41
+  },
+  "23627": {
+   "reported_version": "2.1.34",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "107204": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "93833": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "93958": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 41
+  },
+  "85254": {
+   "reported_version": "2.1.222",
+   "version_source": "stated",
+   "batch": 42
+  },
+  "102292": {
+   "reported_version": "2.1.49",
+   "version_source": "stated",
+   "batch": 42
+  },
+  "33323": {
+   "reported_version": "2.1.74",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "105981": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "103423": {
+   "reported_version": "2.1.304",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "80988": {
+   "reported_version": "2.1.219",
+   "version_source": "stated",
+   "batch": 42
+  },
+  "107641": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "96267": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "30677": {
+   "reported_version": "2.1.69",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "99004": {
+   "reported_version": "2.1.287",
+   "version_source": "stated",
+   "batch": 42
+  },
+  "55621": {
+   "reported_version": "2.1.126",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "93010": {
+   "reported_version": "2.1.267",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "95555": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "7547": {
+   "reported_version": "1.0.112",
+   "version_source": "stated",
+   "batch": 42
+  },
+  "92828": {
+   "reported_version": "2.1.266",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "105758": {
+   "reported_version": "2.1.312",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "93746": {
+   "reported_version": "2.1.269",
+   "version_source": "stated",
+   "batch": 42
+  },
+  "101683": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "90147": {
+   "reported_version": "2.1.246",
+   "version_source": "stated",
+   "batch": 42
+  },
+  "95315": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 42
+  },
+  "104569": {
+   "reported_version": "2.1.309",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "100621": {
+   "reported_version": "2.1.295",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "98277": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "99656": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "91683": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "101244": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "102056": {
+   "reported_version": "2.1.299",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "17432": {
+   "reported_version": "2.1.5",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "18435": {
+   "reported_version": "2.1.9",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "100238": {
+   "reported_version": "2.1.292",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "101005": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "95931": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "88790": {
+   "reported_version": "2.1.241",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "27474": {
+   "reported_version": "2.1.50",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "104941": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "18950": {
+   "reported_version": "2.1.12",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "95495": {
+   "reported_version": "2.1.278",
+   "version_source": "inferred from date",
+   "batch": 43
+  },
+  "104170": {
+   "reported_version": "2.1.307",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "98347": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "106584": {
+   "reported_version": "2.1.309",
+   "version_source": "stated",
+   "batch": 43
+  },
+  "98642": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "92901": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "100953": {
+   "reported_version": "2.1.296",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "92647": {
+   "reported_version": "2.1.260",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "106422": {
+   "reported_version": "2.1.316",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "104448": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "103955": {
+   "reported_version": "2.1.300",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "98152": {
+   "reported_version": "2.1.275",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "97791": {
+   "reported_version": "2.1.284",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "103160": {
+   "reported_version": "2.1.303",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "23134": {
+   "reported_version": "2.1.31",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "100345": {
+   "reported_version": "2.1.293",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "14027": {
+   "reported_version": "2.0.70",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "94370": {
+   "reported_version": "2.1.272",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "96228": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "45596": {
+   "reported_version": "2.1.97",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "92664": {
+   "reported_version": "2.1.142",
+   "version_source": "stated",
+   "batch": 44
+  },
+  "102801": {
+   "reported_version": "2.1.302",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "52517": {
+   "reported_version": "2.1.119",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "107739": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 44
+  },
+  "96537": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "106963": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "107967": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "98929": {
+   "reported_version": "2.1.287",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "90412": {
+   "reported_version": "2.1.246",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "95385": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "102054": {
+   "reported_version": "2.1.300",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "92694": {
+   "reported_version": "2.1.263",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "105862": {
+   "reported_version": "2.1.112",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "96295": {
+   "reported_version": "2.1.280",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "96712": {
+   "reported_version": "2.1.282",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "91511": {
+   "reported_version": "2.1.247",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "98232": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "23706": {
+   "reported_version": "2.1.34",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "84954": {
+   "reported_version": "2.1.223",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "103757": {
+   "reported_version": "2.1.302",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "101073": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "69238": {
+   "reported_version": "2.1.182",
+   "version_source": "inferred from date",
+   "batch": 45
+  },
+  "104134": {
+   "reported_version": "2.1.293",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "85294": {
+   "reported_version": "2.1.222",
+   "version_source": "stated",
+   "batch": 45
+  },
+  "91465": {
+   "reported_version": "2.1.258",
+   "version_source": "stated",
+   "batch": 46
+  },
+  "93175": {
+   "reported_version": "2.1.266",
+   "version_source": "stated",
+   "batch": 46
+  },
+  "95461": {
+   "reported_version": "2.1.277",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "107263": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "95683": {
+   "reported_version": "2.1.278",
+   "version_source": "stated",
+   "batch": 46
+  },
+  "91848": {
+   "reported_version": "2.1.257",
+   "version_source": "stated",
+   "batch": 46
+  },
+  "103636": {
+   "reported_version": "2.1.305",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "94547": {
+   "reported_version": "2.1.272",
+   "version_source": "stated",
+   "batch": 46
+  },
+  "96963": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "100615": {
+   "reported_version": "2.1.295",
+   "version_source": "stated",
+   "batch": 46
+  },
+  "96327": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "78918": {
+   "reported_version": "2.1.214",
+   "version_source": "stated",
+   "batch": 46
+  },
+  "99122": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "17428": {
+   "reported_version": "2.1.5",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "97953": {
+   "reported_version": "2.1.284",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "17968": {
+   "reported_version": "2.1.7",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "101585": {
+   "reported_version": "2.1.296",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "97451": {
+   "reported_version": "2.1.283",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "28018": {
+   "reported_version": "2.1.53",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "93436": {
+   "reported_version": "2.1.268",
+   "version_source": "inferred from date",
+   "batch": 46
+  },
+  "73697": {
+   "reported_version": "2.1.199",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "99490": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 47
+  },
+  "106939": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "98399": {
+   "reported_version": "2.1.285",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "28848": {
+   "reported_version": "2.1.61",
+   "version_source": "inferred from date",
+   "batch": 47
+  },
+  "70014": {
+   "reported_version": "2.1.186",
+   "version_source": "inferred from date",
+   "batch": 47
+  },
+  "100645": {
+   "reported_version": "2.1.295",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "104419": {
+   "reported_version": "2.1.309",
+   "version_source": "inferred from date",
+   "batch": 47
+  },
+  "97809": {
+   "reported_version": "2.1.284",
+   "version_source": "inferred from date",
+   "batch": 47
+  },
+  "91668": {
+   "reported_version": "2.1.259",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "98124": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "31005": {
+   "reported_version": "2.1.69",
+   "version_source": "inferred from date",
+   "batch": 47
+  },
+  "97338": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "39429": {
+   "reported_version": "2.1.84",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "94347": {
+   "reported_version": "2.1.269",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "90507": {
+   "reported_version": "2.1.251",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "34255": {
+   "reported_version": "2.1.76",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "105405": {
+   "reported_version": "2.1.308",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "97730": {
+   "reported_version": "2.1.281",
+   "version_source": "stated",
+   "batch": 47
+  },
+  "14920": {
+   "reported_version": "2.0.75",
+   "version_source": "inferred from date",
+   "batch": 47
+  },
+  "81210": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "15542": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "93950": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "98478": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "98253": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "17727": {
+   "reported_version": "2.1.5",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "107861": {
+   "reported_version": "2.1.319",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "99314": {
+   "reported_version": "2.1.284",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "99379": {
+   "reported_version": "2.1.289",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "81425": {
+   "reported_version": "2.1.220",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "108051": {
+   "reported_version": "2.1.317",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "32573": {
+   "reported_version": "2.1.71",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "98031": {
+   "reported_version": "2.1.285",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "104684": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "16856": {
+   "reported_version": "2.1.2",
+   "version_source": "inferred from date",
+   "batch": 48
+  },
+  "94420": {
+   "reported_version": "2.1.270",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "97537": {
+   "reported_version": "2.1.283",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "27242": {
+   "reported_version": "2.1.31",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "84756": {
+   "reported_version": "2.1.224",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "19649": {
+   "reported_version": "2.1.2",
+   "version_source": "stated",
+   "batch": 48
+  },
+  "94345": {
+   "reported_version": "2.1.268",
+   "version_source": "stated",
+   "batch": 49
+  },
+  "94738": {
+   "reported_version": "2.1.212",
+   "version_source": "stated",
+   "batch": 49
+  },
+  "25045": {
+   "reported_version": "2.1.39",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "13843": {
+   "reported_version": "2.0.68",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "80527": {
+   "reported_version": "2.1.185",
+   "version_source": "stated",
+   "batch": 49
+  },
+  "96421": {
+   "reported_version": "2.1.281",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "106589": {
+   "reported_version": "2.1.316",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "16600": {
+   "reported_version": "2.1.1",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "98403": {
+   "reported_version": "2.1.286",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "93307": {
+   "reported_version": "2.1.267",
+   "version_source": "stated",
+   "batch": 49
+  },
+  "27801": {
+   "reported_version": "2.1.51",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "97074": {
+   "reported_version": "2.1.282",
+   "version_source": "stated",
+   "batch": 49
+  },
+  "104506": {
+   "reported_version": "2.1.310",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "20553": {
+   "reported_version": "2.1.19",
+   "version_source": "stated",
+   "batch": 49
+  },
+  "15199": {
+   "reported_version": "2.0.76",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "99756": {
+   "reported_version": "2.1.290",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "93914": {
+   "reported_version": "2.1.270",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "45132": {
+   "reported_version": "2.1.97",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "107474": {
+   "reported_version": "2.1.318",
+   "version_source": "inferred from date",
+   "batch": 49
+  },
+  "92064": {
+   "reported_version": "2.1.261",
+   "version_source": "inferred from date",
+   "batch": 49
+  }
+ }
+}

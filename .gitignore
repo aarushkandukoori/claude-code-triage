@@ -1,0 +1,19 @@
+# Strangers' full issue text and Anthropic's own files stay local
+data/raw/
+data/reader/
+data/out/
+upstream/
+sweep-fix/original/
+sweep-fix/patched/
+sweep-fix/harness/
+sweep-fix/*.patch
+sweep-fix/dryrun-*.log
+sweep-fix/ISSUE-DRAFT.md
+# The blog lives in its own repo
+site/
+.DS_Store
+__pycache__/
+# Local build output and the widget builders' made-up test data
+preview/
+visuals/sample-data/
+data/private/

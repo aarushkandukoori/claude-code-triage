@@ -1,0 +1,408 @@
+{
+ "snapshot": "2026-11-07",
+ "open": 16112,
+ "closed": 88619,
+ "assigned": 294,
+ "unlabeled": 248,
+ "opened_since_sep1": 12973,
+ "upvotes_10_plus": 1256,
+ "filed_with_claude_signature": 193,
+ "closed_reasons": {
+  "COMPLETED": 15029,
+  "NOT_PLANNED": 50798,
+  "DUPLICATE": 22792
+ },
+ "closed_with_stale_label": 40693,
+ "closed_with_duplicate_label": 26046,
+ "flow_by_month": [
+  {
+   "month": "2025-06",
+   "opened": 1286,
+   "closed": 483
+  },
+  {
+   "month": "2025-07",
+   "opened": 2032,
+   "closed": 782
+  },
+  {
+   "month": "2025-08",
+   "opened": 1943,
+   "closed": 1694
+  },
+  {
+   "month": "2025-09",
+   "opened": 1580,
+   "closed": 755
+  },
+  {
+   "month": "2025-10",
+   "opened": 2113,
+   "closed": 1079
+  },
+  {
+   "month": "2025-11",
+   "opened": 1892,
+   "closed": 1418
+  },
+  {
+   "month": "2025-12",
+   "opened": 3084,
+   "closed": 1804
+  },
+  {
+   "month": "2026-01",
+   "opened": 6000,
+   "closed": 6844
+  },
+  {
+   "month": "2026-02",
+   "opened": 7074,
+   "closed": 7345
+  },
+  {
+   "month": "2026-03",
+   "opened": 11339,
+   "closed": 8771
+  },
+  {
+   "month": "2026-04",
+   "opened": 13074,
+   "closed": 10743
+  },
+  {
+   "month": "2026-05",
+   "opened": 9029,
+   "closed": 11226
+  },
+  {
+   "month": "2026-06",
+   "opened": 8082,
+   "closed": 7814
+  },
+  {
+   "month": "2026-07",
+   "opened": 10020,
+   "closed": 5062
+  },
+  {
+   "month": "2026-08",
+   "opened": 7972,
+   "closed": 6837
+  },
+  {
+   "month": "2026-09",
+   "opened": 7361,
+   "closed": 8708
+  },
+  {
+   "month": "2026-10",
+   "opened": 7847,
+   "closed": 5454
+  },
+  {
+   "month": "2026-11",
+   "opened": 1585,
+   "closed": 994
+  }
+ ],
+ "opened_per_day_last30": 255,
+ "sweep_window": {
+  "locked": 1,
+  "assigned": 186,
+  "10+ upvotes": 599,
+  "already stale": 155,
+  "can label": 59
+ },
+ "sweep_idle_14d": 9387,
+ "sweep_idle_labelable": 8008,
+ "sweep_fixed_query_matches": 8003,
+ "closed_after_stale_by_label": {
+  "data-loss": 324,
+  "reproduced": 200,
+  "high-priority": 77,
+  "area:security": 1346,
+  "has repro": 10015
+ },
+ "window_popular": {
+  "count": 599,
+  "labeled_bug": 442,
+  "quiet_since_before_sep1": 527,
+  "in_sample": {
+   "duplicate": 6,
+   "stale_unclear": 15,
+   "feature_request": 14,
+   "valid_bug": 17,
+   "not_actionable": 3,
+   "already_fixed": 5
+  }
+ },
+ "going_quiet_per_day": 237,
+ "sample_counts": {
+  "by_stratum": {
+   "top": 150,
+   "rest": 600,
+   "security": 250
+  },
+  "final_disposition": {
+   "valid_bug": 408,
+   "feature_request": 224,
+   "duplicate": 117,
+   "stale_unclear": 31,
+   "not_actionable": 133,
+   "already_fixed": 28,
+   "needs_info": 59
+  },
+  "triage_disposition": {
+   "valid_bug": 349,
+   "feature_request": 220,
+   "already_fixed": 37,
+   "duplicate": 174,
+   "stale_unclear": 31,
+   "not_actionable": 131,
+   "needs_info": 58
+  },
+  "closable": 123,
+  "closable_fixed": 26,
+  "closable_duplicate": 97,
+  "severity": {
+   "S2_medium": 368,
+   "none": 319,
+   "S1_high": 66,
+   "S3_low": 238,
+   "S0_critical": 9
+  },
+  "security_flagged_by_triage": 86,
+  "security_verified": 36,
+  "injection_attempts": 2,
+  "regressions": 123,
+  "check_status": {
+   "fixed": {
+    "rejected": 9,
+    "confirmed": 21,
+    "likely": 5,
+    "unverified": 2
+   },
+   "duplicate": {
+    "confirmed": 83,
+    "rejected": 57,
+    "likely": 14,
+    "unverified": 20
+   },
+   "security": {
+    "confirmed": 31,
+    "rejected": 49,
+    "likely": 5,
+    "unverified": 1
+   }
+  },
+  "by_stratum_disposition": {
+   "top": {
+    "valid_bug": 44,
+    "feature_request": 78,
+    "stale_unclear": 11,
+    "not_actionable": 9,
+    "duplicate": 6,
+    "already_fixed": 2
+   },
+   "security": {
+    "stale_unclear": 5,
+    "duplicate": 42,
+    "feature_request": 29,
+    "valid_bug": 117,
+    "not_actionable": 43,
+    "already_fixed": 5,
+    "needs_info": 9
+   },
+   "rest": {
+    "duplicate": 69,
+    "stale_unclear": 15,
+    "valid_bug": 247,
+    "feature_request": 117,
+    "not_actionable": 81,
+    "already_fixed": 21,
+    "needs_info": 50
+   }
+  },
+  "area": {
+   "model_behavior": 185,
+   "desktop_app": 147,
+   "tui": 92,
+   "permissions": 62,
+   "plugins_skills": 59,
+   "web_cloud": 57,
+   "agents_subagents": 52,
+   "ide_extensions": 40,
+   "cost_usage_limits": 40,
+   "context_memory": 35,
+   "auth_account": 34,
+   "git_github": 32,
+   "tools_bash_edit": 30,
+   "mcp": 27,
+   "hooks": 17,
+   "sandbox": 16,
+   "settings_config": 13,
+   "performance_memory": 12,
+   "installation_update": 11,
+   "api_providers": 10,
+   "cli": 10,
+   "other": 10,
+   "networking_proxy": 7,
+   "windows_wsl": 2
+  }
+ },
+ "estimates": {
+  "already_fixed": {
+   "share": 0.0333,
+   "low": 0.0204,
+   "high": 0.0463,
+   "issues": 537,
+   "issues_low": 328,
+   "issues_high": 746
+  },
+  "duplicate": {
+   "share": 0.1195,
+   "low": 0.0968,
+   "high": 0.1422,
+   "issues": 1925,
+   "issues_low": 1559,
+   "issues_high": 2291
+  },
+  "needs_info": {
+   "share": 0.0779,
+   "low": 0.0585,
+   "high": 0.0974,
+   "issues": 1256,
+   "issues_low": 942,
+   "issues_high": 1569
+  },
+  "valid_bug": {
+   "share": 0.4161,
+   "low": 0.3812,
+   "high": 0.451,
+   "issues": 6704,
+   "issues_low": 6141,
+   "issues_high": 7266
+  },
+  "feature_request": {
+   "share": 0.1903,
+   "low": 0.1623,
+   "high": 0.2183,
+   "issues": 3066,
+   "issues_low": 2616,
+   "issues_high": 3517
+  },
+  "not_actionable": {
+   "share": 0.1379,
+   "low": 0.1136,
+   "high": 0.1622,
+   "issues": 2222,
+   "issues_low": 1831,
+   "issues_high": 2613
+  },
+  "stale_unclear": {
+   "share": 0.025,
+   "low": 0.0139,
+   "high": 0.036,
+   "issues": 402,
+   "issues_low": 224,
+   "issues_high": 580
+  },
+  "closable_now": {
+   "share": 0.1328,
+   "low": 0.1088,
+   "high": 0.1568,
+   "issues": 2140,
+   "issues_low": 1753,
+   "issues_high": 2526
+  },
+  "close_or_redirect": {
+   "share": 0.2707,
+   "low": 0.2393,
+   "high": 0.3021,
+   "issues": 4362,
+   "issues_low": 3856,
+   "issues_high": 4868
+  },
+  "real_open_bug": {
+   "share": 0.4161,
+   "low": 0.3812,
+   "high": 0.451,
+   "issues": 6704,
+   "issues_low": 6141,
+   "issues_high": 7266
+  },
+  "s0_or_s1_bug": {
+   "share": 0.037,
+   "low": 0.0246,
+   "high": 0.0494,
+   "issues": 596,
+   "issues_low": 396,
+   "issues_high": 795
+  },
+  "security_verified": {
+   "share": 0.0197,
+   "low": 0.0119,
+   "high": 0.0274,
+   "issues": 317,
+   "issues_low": 192,
+   "issues_high": 442
+  },
+  "security_incl_downgraded": {
+   "share": 0.0335,
+   "low": 0.0235,
+   "high": 0.0435,
+   "issues": 540,
+   "issues_low": 379,
+   "issues_high": 700
+  },
+  "injection_attempt": {
+   "share": 0.0001,
+   "low": 0.0001,
+   "high": 0.0001,
+   "issues": 2,
+   "issues_low": 2,
+   "issues_high": 2
+  }
+ },
+ "sweep_eligible_in_sample": {
+  "count": 447,
+  "disposition": {
+   "valid_bug": 186,
+   "feature_request": 89,
+   "duplicate": 56,
+   "already_fixed": 10,
+   "not_actionable": 67,
+   "needs_info": 37,
+   "stale_unclear": 2
+  },
+  "valid_bug_share": 0.416,
+  "s0_s1_valid_bugs": [
+   73638,
+   76561,
+   79606,
+   85026,
+   86198,
+   93099,
+   93845,
+   95258,
+   95386,
+   95403,
+   96342,
+   96408,
+   98031,
+   100451,
+   101710,
+   101747,
+   102682,
+   103323,
+   103999
+  ]
+ },
+ "sweep_eligible_estimates": {
+  "share_of_backlog": 0.516,
+  "valid_bug": 0.4,
+  "s0_s1_bug": 0.029,
+  "closable": 0.117
+ }
+}

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1,000 issues, sorted</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781; --grid: #e1e0d9;
+    --line: #c3c2b7; --cloud: #a9a79e;
+    --c1: #2a78d6; --c2: #eb6834; --c3: #1baf7a; --c4: #eda100; --c5: #e87ba4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781; --grid: #2c2c2a;
+      --line: #4a4a46; --cloud: #5e5d58;
+      --c1: #3987e5; --c2: #d95926; --c3: #199e70; --c4: #c98500; --c5: #d55181;
+    }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; overflow: hidden; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px; line-height: 1.45;
+    -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+  }
+  #app { padding: 14px 12px 16px; }
+  h2 { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 650; }
+  .lede { margin: 3px 0 12px; font-size: 13.5px; color: var(--ink2); }
+
+  button {
+    font: inherit; font-size: 12.5px; line-height: 1.2; color: var(--ink); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; min-height: 30px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover: hover) { button:hover { border-color: var(--ink2); } }
+  button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0 0 10px; font-size: 12.5px; color: var(--ink2); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; flex: none; }
+  .s1 { background: var(--c1); } .s2 { background: var(--c2); } .s3 { background: var(--c3); }
+  .s4 { background: var(--c4); } .s5 { background: var(--c5); }
+  .sw.ring { box-shadow: inset 0 0 0 1.5px var(--ink); }
+
+  #plotwrap { position: relative; }
+  #plot { position: relative; border-radius: 3px; }
+  #plot:focus { outline: none; }
+  #plot:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+  #cv { position: absolute; display: block; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  #labels { position: absolute; left: 0; top: 0; right: 0; bottom: 0; pointer-events: none; }
+  .blab { position: absolute; font-size: 13px; line-height: 1.3; opacity: 0; transition: opacity .45s ease; }
+  .blab.on { opacity: 1; }
+  .blab b { display: block; font-weight: 600; white-space: nowrap; }
+  .blab .cnt { color: var(--ink2); font-size: 12.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bands .blab b { display: inline; margin-right: 6px; }
+
+  .card {
+    margin: 14px 0 0; padding: 12px 14px 10px; background: var(--surface);
+    border: 1px solid var(--grid); border-radius: 6px;
+  }
+  .card p { margin: 0 0 5px; font-size: 13.5px; overflow-wrap: anywhere; }
+  .cempty p { color: var(--ink2); }
+  .cempty .hint { font-size: 12.5px; }
+  .chead { display: flex; align-items: baseline; gap: 7px; font-size: 13px; }
+  #cCall { font-weight: 600; }
+  #cNum { margin-left: auto; padding-left: 8px; color: var(--ink2); font-variant-numeric: tabular-nums; }
+  .ctitle { margin: 6px 0 5px; font-size: 15px; line-height: 1.35; font-weight: 600; overflow-wrap: anywhere; }
+  .card .csum { color: var(--ink2); }
+  .card .cchk, .card .cmeta { color: var(--ink2); font-size: 12.5px; }
+  .cfoot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 10px; }
+  .cbtns { display: flex; flex-wrap: wrap; gap: 6px; }
+  #cLink {
+    margin-left: auto; padding: 6px 2px; font-size: 13px; color: var(--ink);
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px;
+  }
+
+  #scaled { margin: 22px 0 0; }
+  #scaled h3 { margin: 0 0 8px; font-size: 14px; line-height: 1.3; font-weight: 600; }
+  .erow {
+    display: grid; grid-template-columns: 132px minmax(0, 1fr) 200px; column-gap: 12px;
+    align-items: center; min-height: 26px; font-size: 13px;
+  }
+  .ename { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .eval { white-space: nowrap; color: var(--ink2); font-variant-numeric: tabular-nums; }
+  .eval b { color: var(--ink); font-weight: 600; }
+  .track { position: relative; height: 12px; }
+  .gl { position: absolute; top: -7px; bottom: -7px; width: 1px; background: var(--grid); }
+  .gl.zero { background: var(--line); }
+  .bar {
+    position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 2px 2px 0;
+    transform: scaleX(0); transform-origin: 0 50%;
+  }
+  .wh { position: absolute; top: 6px; height: 1px; background: var(--ink); opacity: 0; }
+  .wh::before, .wh::after { content: ""; position: absolute; top: -3px; width: 1px; height: 7px; background: var(--ink); }
+  .wh::before { left: 0; }
+  .wh::after { right: 0; }
+  #scaled.go .bar { transform: none; transition: transform .9s cubic-bezier(.2, .8, .25, 1); }
+  #scaled.go .wh { opacity: 1; transition: opacity .35s ease; }
+  .axisrow { min-height: 18px; }
+  .axis { position: relative; height: 16px; font-size: 11.5px; color: var(--ink2); font-variant-numeric: tabular-nums; }
+  .axis span { position: absolute; top: 1px; transform: translateX(-50%); white-space: nowrap; }
+  .axis span:first-child { transform: none; }
+  .note { margin: 8px 0 0; font-size: 12.5px; color: var(--ink2); }
+  .nw, .pv { white-space: nowrap; }
+  @media (max-width: 599px) {
+    .erow { grid-template-columns: auto minmax(0, 1fr); row-gap: 4px; margin: 0 0 8px; align-items: start; }
+    .erow .track { grid-column: 1 / -1; grid-row: 2; }
+    .eval { white-space: normal; text-align: right; }
+    .eval .about { white-space: nowrap; }
+    .gl { top: -3px; bottom: -3px; }
+    .axisrow { grid-template-columns: minmax(0, 1fr); margin: 0; }
+    .axisrow > span { display: none; }
+    /* Here the axis runs to the edge of the widget, so the last tick label sits inside it. */
+    .axis span:last-child { transform: translateX(-100%); }
+  }
+  @media (max-width: 439px) {
+    /* The link gets its own line under the buttons, as wide as its text so a stray tap can't open it. */
+    .cfoot { flex-direction: column; align-items: flex-start; gap: 8px; }
+    #cLink { margin-left: 0; padding: 4px 0; }
+  }
+  .settled .blab, #scaled.settled .bar, #scaled.settled .wh { transition: none !important; }
+  @media (prefers-reduced-motion: reduce) {
+    .blab, #scaled.go .bar, #scaled.go .wh { transition: none !important; }
+  }
+  .sr {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <h2 id="title">1,000 issues, sorted</h2>
+  <p class="lede">Each square is one open issue in the <span class="nw">claude-code</span> repo. Tap one to read it.</p>
+  <div class="chips" id="chips" role="group" aria-label="Show issues by how they were sampled"></div>
+  <div class="legend" id="legend"></div>
+  <div id="plotwrap">
+    <div id="plot" tabindex="0" role="application" aria-roledescription="dot plot"
+         aria-label="Issue squares in five groups" aria-describedby="plotHint">
+      <canvas id="cv" aria-hidden="true"></canvas>
+    </div>
+    <div id="labels"></div>
+  </div>
+  <p class="sr" id="plotHint">Arrow keys move between issues. Home and End jump to the first and last one.</p>
+
+  <div class="card" id="card">
+    <div class="cempty" id="cEmpty">
+      <p>Tap any square to read the issue, the call my agents made, and what a maintainer should do next.</p>
+      <p class="hint">With a keyboard, focus the plot and use the arrow keys.</p>
+    </div>
+    <div id="cBody" hidden>
+      <div class="chead"><span class="sw" id="cSw" aria-hidden="true"></span><span id="cCall"></span><span id="cNum"></span></div>
+      <div class="ctitle" id="cTitle"></div>
+      <p class="csum" id="cSum"></p>
+      <p class="cact" id="cAct"><b>Next step</b> - <span id="cActText"></span></p>
+      <p class="cchk" id="cChk"></p>
+      <p class="cmeta" id="cMeta"></p>
+    </div>
+    <div class="cfoot">
+      <div class="cbtns">
+        <button type="button" id="bPrev">Previous</button>
+        <button type="button" id="bNext">Next</button>
+        <button type="button" id="bRand">Random issue</button>
+      </div>
+      <a id="cLink" target="_blank" rel="noopener noreferrer" hidden>Open on GitHub</a>
+    </div>
+  </div>
+
+  <section id="scaled" aria-labelledby="scaledTitle">
+    <h3 id="scaledTitle">Scaled up to all open issues</h3>
+    <div id="erows"></div>
+    <p class="note">The sample <span class="nw">over-weights</span> popular and security issues on purpose. These bars <span class="nw">re-weight</span> it. The thin line is the 95% interval.</p>
+  </section>
+  <div id="live" class="sr" aria-live="polite" aria-atomic="true"></div>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  'use strict';
+
+  var PREFIX = 'https://github.com/anthropics/claude-code/issues/';
+  var FONT = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+  var GROUPS = [
+    { key: 'bug', name: 'Real bugs' },
+    { key: 'feature', name: 'Feature requests' },
+    { key: 'close', name: 'Close now' },
+    { key: 'ask', name: 'Ask the reporter' },
+    { key: 'noact', name: 'Not actionable' }
+  ];
+  var NG = GROUPS.length;
+  var SEV_WORD = { S0_critical: 'critical', S1_high: 'high', S2_medium: 'medium', S3_low: 'low' };
+  var CLOSE_D = { already_fixed: 'Close now, already fixed', duplicate: 'Close now, duplicate' };
+  var ASK_D = { needs_info: 'Ask the reporter, needs more info', stale_unclear: 'Ask the reporter, old and needs a retest' };
+  var ST_RANK = { top: 0, security: 1, rest: 2 };
+  var FADED = 0.12;      // opacity of squares outside the current filter
+  var HOLD = 0.35;       // seconds the gray cloud sits still before it sorts
+  var reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var FADE_MS = reduced ? 0 : 280;
+  var PAD = 6;          // canvas bleeds past the plot box so edge rings are not clipped
+
+  function $(id) { return document.getElementById(id); }
+  function own(o, k) { return o != null && typeof k === 'string' && Object.prototype.hasOwnProperty.call(o, k); }
+  function str(v) { return typeof v === 'string' ? v : (typeof v === 'number' && isFinite(v) ? String(v) : ''); }
+  function fmt(n) { return Math.round(n).toLocaleString('en-US'); }
+  function pct(x) { return Math.round(x * 100) + '%'; }
+  function clamp01(x) { return x < 0 ? 0 : (x > 1 ? 1 : x); }
+  function make(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function reportHeight() {
+    const h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    window.parent.postMessage({ type: "chirpy-interactive-height", height: h }, "*");
+  }
+
+  // ---------- data ----------
+  var DATA = {};
+  try { DATA = JSON.parse($('data').textContent) || {}; } catch (err) { DATA = {}; }
+  if (typeof DATA !== 'object') DATA = {};
+  var strata = (DATA.strata && typeof DATA.strata === 'object') ? DATA.strata : {};
+  var GI = {};
+  GROUPS.forEach(function (g, i) { GI[g.key] = i; });
+
+  var items = [];
+  (Array.isArray(DATA.issues) ? DATA.issues : []).forEach(function (r) {
+    if (!r || typeof r !== 'object' || !own(GI, r.g)) return;
+    var n = Number(r.n), up = Number(r.up);
+    items.push({
+      n: Number.isInteger(n) && n > 0 ? n : 0,
+      t: str(r.t), g: GI[r.g], d: str(r.d), sev: str(r.sev), s: str(r.s),
+      sum: str(r.sum), act: str(r.act), chk: str(r.chk),
+      up: isFinite(up) && up > 0 ? Math.round(up) : 0
+    });
+  });
+  function stRank(s) { return own(ST_RANK, s) ? ST_RANK[s] : 3; }
+  // Inside a block: most-upvoted sample first, then security, then random; busiest issues first.
+  items.sort(function (a, b) {
+    return (a.g - b.g) || (stRank(a.s) - stRank(b.s)) || (b.up - a.up) || (a.n - b.n);
+  });
+  var N = items.length;
+  var gSize = [0, 0, 0, 0, 0];
+  items.forEach(function (it) { it.k = gSize[it.g]++; });
+  var severe = new Uint8Array(N);
+  items.forEach(function (it, i) {
+    severe[i] = it.g === 0 && (it.sev === 'S0_critical' || it.sev === 'S1_high') ? 1 : 0;
+  });
+
+  $('title').textContent = fmt(N) + ' issues, sorted';
+
+  // ---------- filter chips ----------
+  var filters = [{ key: 'all', text: 'All ' + fmt(N) }];
+  ['top', 'security', 'rest'].forEach(function (k) {
+    var c = 0;
+    items.forEach(function (it) { if (it.s === k) c++; });
+    if (!c) return;
+    var label = own(strata, k) && strata[k] && typeof strata[k] === 'object' ? str(strata[k].label) : '';
+    // The chip always shows the real count, even if the label already starts with a number.
+    label = label.replace(/^[\d,]+\s+/, '') || k;
+    filters.push({ key: k, text: fmt(c) + ' ' + label });
+  });
+  var chipEls = [];
+  filters.forEach(function (f) {
+    var b = make('button', 'chip', f.text);
+    b.type = 'button';
+    b.setAttribute('aria-pressed', f.key === 'all' ? 'true' : 'false');
+    b.addEventListener('click', function () { setFilter(f.key); });
+    $('chips').appendChild(b);
+    chipEls.push({ key: f.key, el: b, text: f.text });
+  });
+
+  // ---------- legend ----------
+  GROUPS.forEach(function (g, gi) {
+    var s = make('span');
+    var sw = make('span', 'sw s' + (gi + 1));
+    sw.setAttribute('aria-hidden', 'true');
+    s.appendChild(sw);
+    s.appendChild(document.createTextNode(g.name));
+    $('legend').appendChild(s);
+  });
+  (function () {
+    var s = make('span');
+    var sw = make('span', 'sw s1 ring');
+    sw.setAttribute('aria-hidden', 'true');
+    s.appendChild(sw);
+    s.appendChild(document.createTextNode('ring = high or critical severity'));
+    $('legend').appendChild(s);
+  })();
+
+  // ---------- block labels ----------
+  var labelsOn = false;
+  var labels = GROUPS.map(function (g) {
+    var d = make('div', 'blab');
+    d.appendChild(make('b', null, g.name));
+    var c = make('span', 'cnt', '');
+    d.appendChild(c);
+    $('labels').appendChild(d);
+    return { el: d, cnt: c };
+  });
+  function showLabels() {
+    if (labelsOn) return;
+    labelsOn = true;
+    labels.forEach(function (lb) { lb.el.classList.add('on'); });
+    setTimeout(function () { $('plotwrap').classList.add('settled'); }, 700);
+  }
+
+  // ---------- colors ----------
+  var col = {}, colG = [], rgbG = [], rgbCloud = [0, 0, 0];
+  function hexRgb(h) {
+    h = String(h).trim().replace('#', '');
+    if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    var v = parseInt(h, 16);
+    return isNaN(v) ? [128, 128, 128] : [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+  }
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ['bg', 'surface', 'ink', 'ink2', 'line', 'cloud', 'c1', 'c2', 'c3', 'c4', 'c5'].forEach(function (k) {
+      col[k] = cs.getPropertyValue('--' + k).trim();
+    });
+    colG = [col.c1, col.c2, col.c3, col.c4, col.c5];
+    rgbG = colG.map(hexRgb);
+    rgbCloud = hexRgb(col.cloud);
+  }
+  function mix(a, b, m) {
+    return 'rgb(' + Math.round(a[0] + (b[0] - a[0]) * m) + ',' + Math.round(a[1] + (b[1] - a[1]) * m) + ',' +
+      Math.round(a[2] + (b[2] - a[2]) * m) + ')';
+  }
+  readColors();
+
+  // ---------- geometry ----------
+  var plot = $('plot'), canvas = $('cv'), ctx = canvas.getContext('2d');
+  var hasRR = typeof ctx.roundRect === 'function';
+  var L = { W: 0, H: 0, s: 8, gap: 2, p: 10, mode: 5, cols: 10 };
+  var dpr = 1;
+  var tx = new Float32Array(N), ty = new Float32Array(N);
+  var cu = new Float32Array(N), cvv = new Float32Array(N);
+  var delay = new Float32Array(N), dur = new Float32Array(N), bend = new Float32Array(N);
+  var px = new Float32Array(N), py = new Float32Array(N), psz = new Float32Array(N);
+  var pal = new Float32Array(N), pm = new Float32Array(N);
+  var aFrom = new Float32Array(N), aTo = new Float32Array(N);
+  for (var q = 0; q < N; q++) { aFrom[q] = 1; aTo[q] = 1; }
+
+  // Seeded random, so the unsorted cloud looks the same on every load.
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  var rnd = mulberry32(16112);
+  var introEnd = 0;
+  for (var i0 = 0; i0 < N; i0++) {
+    var ang = rnd() * Math.PI * 2;
+    var rad0 = Math.pow(rnd(), 0.72) * (1 + 0.1 * Math.sin(3 * ang + 1.3));
+    cu[i0] = Math.cos(ang) * rad0;
+    cvv[i0] = Math.sin(ang) * rad0;
+    var gs = gSize[items[i0].g];
+    delay[i0] = HOLD + (gs > 1 ? items[i0].k / (gs - 1) : 0) * 0.4 + rnd() * 0.08;
+    dur[i0] = 0.62 + rnd() * 0.12;
+    bend[i0] = (rnd() - 0.5) * 0.5;
+    introEnd = Math.max(introEnd, delay[i0] + dur[i0]);
+  }
+
+  var measure = document.createElement('canvas').getContext('2d');
+  function nameWidth() {
+    measure.font = '600 13px ' + FONT;
+    var m = 0;
+    GROUPS.forEach(function (g) { m = Math.max(m, measure.measureText(g.name).width); });
+    return Math.ceil(m);
+  }
+
+  function layout() {
+    var W = Math.floor(plot.clientWidth);
+    if (!W) return;
+    var s = W >= 600 ? 8 : (W >= 440 ? 7 : 6), gap = 2, p = s + gap;
+    var minSlot = nameWidth() + 10, colGap = 16;
+    var mode = 1;
+    if (W >= 440) {
+      [5, 3, 2].some(function (m) {
+        if ((W - (m - 1) * colGap) / m >= minSlot) { mode = m; return true; }
+        return false;
+      });
+    }
+    var blocks = [], lpos = [], cols, y, gi;
+    if (mode > 1) {
+      var slot = (W - (mode - 1) * colGap) / mode;
+      cols = Math.max(4, Math.floor((slot + gap) / p));
+      var blockW = cols * p - gap;
+      var slotGap = Math.floor((W - mode * blockW) / (mode - 1));
+      var LABEL_GAP = 7, LABEL_H = 34, ROW_GAP = 16;
+      y = 4;
+      for (var r0 = 0; r0 < NG; r0 += mode) {
+        var r1 = Math.min(r0 + mode, NG), rowsMax = 0;
+        for (gi = r0; gi < r1; gi++) rowsMax = Math.max(rowsMax, Math.ceil(gSize[gi] / cols));
+        var hRow = rowsMax > 0 ? rowsMax * p - gap : 0;
+        for (gi = r0; gi < r1; gi++) {
+          var bx = (gi - r0) * (blockW + slotGap);
+          blocks[gi] = { x: bx, bottom: y + hRow };
+          // The last label in a row stops at the plot's right edge instead of hanging past it.
+          lpos[gi] = { x: bx, y: y + hRow + LABEL_GAP, w: Math.min(blockW + slotGap - 4, W - bx) };
+        }
+        y += hRow + LABEL_GAP + LABEL_H + ROW_GAP;
+      }
+      L.H = y - ROW_GAP;
+    } else {
+      cols = Math.max(4, Math.floor((W + gap) / p));
+      var LABEL_H1 = 18, LABEL_GAP1 = 5, BAND_GAP = 16;
+      y = 0;
+      for (gi = 0; gi < NG; gi++) {
+        lpos[gi] = { x: 0, y: y, w: W };
+        y += LABEL_H1 + LABEL_GAP1;
+        blocks[gi] = { x: 0, top: y };
+        var rows = Math.ceil(gSize[gi] / cols);
+        y += (rows > 0 ? rows * p - gap : 0) + BAND_GAP;
+      }
+      L.H = y - BAND_GAP + 4;
+    }
+    L.W = W; L.s = s; L.gap = gap; L.p = p; L.mode = mode; L.cols = cols;
+    for (var i = 0; i < N; i++) {
+      var it = items[i], b = blocks[it.g], row = Math.floor(it.k / cols), c = it.k % cols;
+      tx[i] = b.x + c * p;
+      // Columns fill from the bottom up, like a bar; bands (phones) fill top-down like text.
+      ty[i] = mode > 1 ? b.bottom - s - row * p : b.top + row * p;
+    }
+    dpr = Math.min(3, window.devicePixelRatio || 1);
+    canvas.width = Math.round((W + 2 * PAD) * dpr);
+    canvas.height = Math.round((L.H + 2 * PAD) * dpr);
+    canvas.style.width = (W + 2 * PAD) + 'px';
+    canvas.style.height = (L.H + 2 * PAD) + 'px';
+    canvas.style.left = -PAD + 'px';
+    canvas.style.top = -PAD + 'px';
+    plot.style.height = L.H + 'px';
+    $('plotwrap').classList.toggle('bands', mode === 1);
+    labels.forEach(function (lb, k) {
+      lb.el.style.left = lpos[k].x + 'px';
+      lb.el.style.top = lpos[k].y + 'px';
+      lb.el.style.width = lpos[k].w + 'px';
+    });
+  }
+
+  // ---------- state ----------
+  var filterKey = 'all', selIdx = -1, hoverIdx = -1, userPicked = false;
+  var fadeT0 = -1;
+  var intro = { state: 'waiting', t0: 0 };   // waiting -> running -> done
+
+  function isActive(i) { return filterKey === 'all' || items[i].s === filterKey; }
+
+  // ---------- drawing ----------
+  function easeInOut(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function smooth(a, b, x) { var t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); }
+  function sq(x, y, w, r) {
+    if (hasRR) ctx.roundRect(x, y, w, w, r); else ctx.rect(x, y, w, w);
+  }
+  function outline(i, lw, color, off) {
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = lw;
+    ctx.strokeStyle = color;
+    ctx.beginPath();
+    sq(px[i] - off, py[i] - off, psz[i] + off * 2, 2 + off * 0.6);
+    ctx.stroke();
+  }
+
+  function draw(now) {
+    var W = L.W, H = L.H, s = L.s;
+    if (!W || !H) return false;
+    var busy = false, t = 0, flying = intro.state !== 'done';
+    if (intro.state === 'running') {
+      t = (now - intro.t0) / 1000;
+      if (t >= introEnd - 0.3) showLabels();
+      if (t >= introEnd) { settleIntro(); flying = false; } else busy = true;
+    }
+    var fe = 1;
+    if (fadeT0 >= 0) {
+      var ft = FADE_MS > 0 ? clamp01((now - fadeT0) / FADE_MS) : 1;
+      fe = ft * (2 - ft);
+      if (ft >= 1) fadeT0 = -1; else busy = true;
+    }
+    var fading = fadeT0 >= 0;
+
+    ctx.setTransform(dpr, 0, 0, dpr, PAD * dpr, PAD * dpr);
+    ctx.clearRect(-PAD, -PAD, W + 2 * PAD, H + 2 * PAD);
+    var cx = W / 2, cy = H * 0.47, rx = W * 0.45, ry = H * 0.43;
+    var r = Math.max(1, s * 0.18);
+    var curStyle = null, curAlpha = -1;
+    for (var i = 0; i < N; i++) {
+      var g = items[i].g, x, y, sz = s, m = 1;
+      if (flying) {
+        var x0 = cx + cu[i] * rx - s / 2, y0 = cy + cvv[i] * ry - s / 2;
+        var u = clamp01((t - delay[i]) / dur[i]);
+        if (u <= 0) { x = x0; y = y0; m = 0; }
+        else if (u >= 1) { x = tx[i]; y = ty[i]; }
+        else {
+          // Curved flight: a quadratic path bent sideways, eased in and out, a little lift mid-air.
+          var e = easeInOut(u), dx = tx[i] - x0, dy = ty[i] - y0;
+          var mx = x0 + dx * 0.5 - dy * bend[i], my = y0 + dy * 0.5 + dx * bend[i];
+          // Keep the bend point inside the plot, so no square arcs off the canvas and gets cut off.
+          mx = Math.max(0, Math.min(W - s, mx));
+          my = Math.max(0, Math.min(H - s, my));
+          var w1 = (1 - e) * (1 - e), w2 = 2 * (1 - e) * e, w3 = e * e;
+          x = w1 * x0 + w2 * mx + w3 * tx[i];
+          y = w1 * y0 + w2 * my + w3 * ty[i];
+          m = smooth(0.08, 0.6, u);
+          sz = s * (1 + 0.24 * Math.sin(Math.PI * u));
+        }
+      } else { x = tx[i]; y = ty[i]; }
+      var a = fading ? aFrom[i] + (aTo[i] - aFrom[i]) * fe : aTo[i];
+      var style = m >= 1 ? colG[g] : (m <= 0 ? col.cloud : mix(rgbCloud, rgbG[g], m));
+      if (style !== curStyle || a !== curAlpha) {
+        if (curStyle !== null) ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = style;
+        ctx.globalAlpha = a;
+        curStyle = style; curAlpha = a;
+      }
+      var off = (sz - s) / 2;
+      px[i] = x - off; py[i] = y - off; psz[i] = sz; pal[i] = a; pm[i] = m;
+      sq(px[i], py[i], sz, r);
+    }
+    if (curStyle !== null) ctx.fill();
+
+    // High or critical bugs get an ink ring inside the square.
+    var lw = s >= 7 ? 1.5 : 1.25;
+    ctx.lineWidth = lw;
+    ctx.strokeStyle = col.ink;
+    for (i = 0; i < N; i++) {
+      if (!severe[i] || pm[i] <= 0) continue;
+      ctx.globalAlpha = pal[i] * pm[i];
+      ctx.beginPath();
+      sq(px[i] + lw / 2, py[i] + lw / 2, psz[i] - lw, Math.max(0.5, r - lw / 2));
+      ctx.stroke();
+    }
+
+    if (!flying) {
+      if (hoverIdx >= 0 && hoverIdx !== selIdx) outline(hoverIdx, 1.5, col.ink2, 2);
+      if (selIdx >= 0) {
+        var j = selIdx;
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = colG[items[j].g];
+        ctx.beginPath(); sq(px[j], py[j], psz[j], r); ctx.fill();
+        if (severe[j]) {
+          ctx.lineWidth = lw; ctx.strokeStyle = col.ink;
+          ctx.beginPath(); sq(px[j] + lw / 2, py[j] + lw / 2, psz[j] - lw, Math.max(0.5, r - lw / 2)); ctx.stroke();
+        }
+        outline(j, 5, col.bg, 2.75);
+        outline(j, 2, col.ink, 2.75);
+      }
+    }
+    ctx.globalAlpha = 1;
+    return busy;
+  }
+
+  var raf = 0;
+  function frame(now) { raf = 0; if (draw(now)) kick(); }
+  function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+
+  // ---------- intro ----------
+  var scaledSeen = false, barsGone = false, introTimer = 0;
+  function startIntro() {
+    if (intro.state !== 'waiting') return;
+    if (reduced) { endIntro(); return; }
+    intro.state = 'running';
+    intro.t0 = performance.now();
+    // Safety net: if frames stall (throttled or headless page), still land on the sorted state.
+    introTimer = setTimeout(endIntro, Math.ceil(introEnd * 1000) + 500);
+    kick();
+  }
+  function settleIntro() {
+    if (intro.state === 'done') return false;
+    intro.state = 'done';
+    clearTimeout(introTimer);
+    showLabels();
+    tryBars();
+    return true;
+  }
+  function endIntro() {
+    if (settleIntro()) { draw(performance.now()); kick(); }
+  }
+  function tryBars() {
+    if (barsGone || !scaledSeen || intro.state === 'running') return;
+    barsGone = true;
+    $('scaled').classList.add('go');
+    setTimeout(function () { $('scaled').classList.add('settled'); }, 2000);
+  }
+
+  // ---------- counts, filter ----------
+  var counts = [0, 0, 0, 0, 0], total = 0;
+  function updateCounts() {
+    counts = [0, 0, 0, 0, 0]; total = 0;
+    for (var i = 0; i < N; i++) if (isActive(i)) { counts[items[i].g]++; total++; }
+    labels.forEach(function (lb, gi) {
+      lb.cnt.textContent = fmt(counts[gi]);  // raw sample counts; the weighted shares are in the bars below
+    });
+  }
+
+  var live = $('live'), liveTimer = 0;
+  function announce(text) {
+    clearTimeout(liveTimer);
+    live.textContent = '';
+    liveTimer = setTimeout(function () { live.textContent = text; }, 40);
+  }
+
+  function setFilter(key) {
+    if (key === filterKey) return;
+    if (intro.state === 'waiting') endIntro();
+    var now = performance.now();
+    var ft = fadeT0 >= 0 && FADE_MS > 0 ? clamp01((now - fadeT0) / FADE_MS) : 1, fe = ft * (2 - ft);
+    for (var i = 0; i < N; i++) aFrom[i] = fadeT0 >= 0 ? aFrom[i] + (aTo[i] - aFrom[i]) * fe : aTo[i];
+    filterKey = key;
+    for (i = 0; i < N; i++) aTo[i] = isActive(i) ? 1 : FADED;
+    fadeT0 = now;
+    setTimeout(function () {
+      if (fadeT0 >= 0 && performance.now() - fadeT0 >= FADE_MS) { fadeT0 = -1; draw(performance.now()); }
+    }, FADE_MS + 150);
+    var chipText = '';
+    chipEls.forEach(function (c) {
+      c.el.setAttribute('aria-pressed', c.key === key ? 'true' : 'false');
+      if (c.key === key) chipText = c.text;
+    });
+    if (hoverIdx >= 0 && !isActive(hoverIdx)) hoverIdx = -1;
+    if (!userPicked) { selIdx = firstActive(); renderCard(hoverIdx >= 0 ? hoverIdx : selIdx); }
+    updateCounts();
+    announce('Showing ' + chipText + '. ' + GROUPS.map(function (g, gi) {
+      return g.name + ' ' + fmt(counts[gi]);
+    }).join(', ') + '.');
+    kick();
+  }
+
+  // ---------- details card ----------
+  function callText(it) {
+    if (it.g === 0) return 'Real bug' + (own(SEV_WORD, it.sev) ? ', ' + SEV_WORD[it.sev] + ' severity' : '');
+    if (it.g === 1) return 'Feature request';
+    if (it.g === 2) return own(CLOSE_D, it.d) ? CLOSE_D[it.d] : 'Close now';
+    if (it.g === 3) return own(ASK_D, it.d) ? ASK_D[it.d] : 'Ask the reporter';
+    return 'Not actionable';
+  }
+  // "chk" is the result of the two checkers on a call to close the issue ("already fixed" or "duplicate").
+  // No closing call means "chk" says nothing (security calls were checked too, but the data doesn't carry
+  // that), so the line stays hidden instead of guessing.
+  function checkText(it) {
+    if (it.chk === 'confirmed') return 'Checked twice, both agreed.';
+    if (it.chk === 'likely') return 'Checked twice, one agreed, one unsure.';
+    if (it.chk === 'rejected') {
+      if (it.g === 0) return 'A checker disagreed, so it stays open as a real bug.';
+      if (it.g === 2) return 'A checker disagreed.';
+      return 'A checker disagreed with closing it, so it stays open.';
+    }
+    if (it.chk === 'unverified') {
+      var was = it.d === 'duplicate' ? 'a duplicate' : (it.d === 'already_fixed' ? 'already fixed' : 'closable');
+      return 'Neither checker could confirm it was ' + was + ', so it stays open' + (it.g === 0 ? ' as a real bug.' : '.');
+    }
+    return '';
+  }
+  function stratumOf(k) {
+    var st = own(strata, k) && strata[k] && typeof strata[k] === 'object' ? strata[k] : null;
+    return st && Number(st.of) > 0 ? fmt(Number(st.of)) : '';
+  }
+  function metaText(it) {
+    var up = it.up === 1 ? '1 upvote' : fmt(it.up) + ' upvotes';
+    var of = stratumOf(it.s), where = '';
+    if (it.s === 'top') where = of ? 'one of the ' + of + ' most-upvoted open issues' : 'one of the most-upvoted open issues';
+    else if (it.s === 'security') where = of ? 'picked at random from ' + of + ' security-flavored issues' : 'picked from the security-flavored issues';
+    else if (it.s === 'rest') where = of ? 'picked at random from the other ' + of + ' open issues' : 'picked at random';
+    return up + (where ? ', ' + where : '') + '.';
+  }
+
+  var cardShown = -2;
+  function renderCard(i) {
+    if (i === cardShown) return;
+    cardShown = i;
+    var link = $('cLink');
+    if (i < 0) {
+      $('cEmpty').hidden = false; $('cBody').hidden = true; link.hidden = true;
+      return;
+    }
+    var it = items[i];
+    $('cEmpty').hidden = true; $('cBody').hidden = false;
+    $('cSw').className = 'sw s' + (it.g + 1);
+    $('cCall').textContent = callText(it);
+    $('cNum').textContent = it.n ? '#' + it.n : '';
+    $('cTitle').textContent = it.t || '(no title)';
+    $('cSum').textContent = it.sum;
+    $('cSum').hidden = !it.sum;
+    $('cActText').textContent = it.act;
+    $('cAct').hidden = !it.act;
+    $('cChk').textContent = checkText(it);
+    $('cChk').hidden = !$('cChk').textContent;
+    $('cMeta').textContent = metaText(it);
+    if (it.n) {
+      link.href = PREFIX + it.n;
+      link.setAttribute('aria-label', 'Open issue ' + it.n + ' on GitHub');
+      link.hidden = false;
+    } else {
+      link.removeAttribute('href');
+      link.hidden = true;
+    }
+  }
+
+  function select(i, say) {
+    if (i < 0 || i >= N) return;
+    if (intro.state !== 'done') endIntro();
+    selIdx = i;
+    userPicked = true;
+    hoverIdx = -1;   // a pick (tap, click, key, button) wins over a stale mouse hover
+    renderCard(i);
+    if (say) {
+      var it = items[i];
+      announce((it.n ? 'Issue ' + it.n + '. ' : '') + callText(it) + '. ' + (it.t || ''));
+    }
+    kick();
+  }
+  // While the mouse sweeps across the plot the card can grow but never shrinks, so the blog text under
+  // the widget doesn't bounce. When the mouse leaves the plot, the card settles to its real height.
+  var cardEl = $('card');
+  function setHover(i) {
+    if (i === hoverIdx) return;
+    cardEl.style.minHeight = cardEl.offsetHeight + 'px';
+    hoverIdx = i;
+    renderCard(i >= 0 ? i : selIdx);
+    kick();
+  }
+
+  // ---------- navigation ----------
+  function firstActive() { for (var i = 0; i < N; i++) if (isActive(i)) return i; return -1; }
+  function lastActive() { for (var i = N - 1; i >= 0; i--) if (isActive(i)) return i; return -1; }
+  function stepLinear(i, dir) {
+    for (var k = 1; k <= N; k++) {
+      var j = ((i + dir * k) % N + N) % N;
+      if (isActive(j)) return j;
+    }
+    return i;
+  }
+  function stepVert(i, dir) {
+    var best = -1, bs = Infinity, p = L.p;
+    for (var j = 0; j < N; j++) {
+      if (j === i || !isActive(j)) continue;
+      var dy = (ty[j] - ty[i]) * dir, dx = Math.abs(tx[j] - tx[i]);
+      if (dy < p * 0.5 || dx > p * 3) continue;
+      var sc = dy + dx * 4;
+      if (sc < bs) { bs = sc; best = j; }
+    }
+    return best < 0 ? i : best;
+  }
+  function randomActive() {
+    var pool = [];
+    for (var i = 0; i < N; i++) if (isActive(i) && i !== selIdx) pool.push(i);
+    return pool.length ? pool[Math.floor(Math.random() * pool.length)] : selIdx;
+  }
+
+  $('bPrev').addEventListener('click', function () { select(selIdx < 0 ? lastActive() : stepLinear(selIdx, -1), true); });
+  $('bNext').addEventListener('click', function () { select(selIdx < 0 ? firstActive() : stepLinear(selIdx, 1), true); });
+  $('bRand').addEventListener('click', function () { select(randomActive(), true); });
+
+  plot.addEventListener('keydown', function (e) {
+    var k = e.key, j;
+    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].indexOf(k) < 0) return;
+    e.preventDefault();
+    if (intro.state !== 'done') endIntro();
+    if (k === 'Home') j = firstActive();
+    else if (k === 'End') j = lastActive();
+    else if (selIdx < 0) j = firstActive();
+    else if (k === 'ArrowRight') j = stepLinear(selIdx, 1);
+    else if (k === 'ArrowLeft') j = stepLinear(selIdx, -1);
+    else j = stepVert(selIdx, k === 'ArrowUp' ? -1 : 1);
+    if (j >= 0) select(j, true);
+  });
+
+  // ---------- pointer ----------
+  function nearest(x, y, tol) {
+    var best = -1, bd = tol * tol, h = L.s / 2;
+    for (var i = 0; i < N; i++) {
+      if (!isActive(i)) continue;
+      var dx = x - (tx[i] + h), dy = y - (ty[i] + h), d = dx * dx + dy * dy;
+      if (d <= bd) { bd = d; best = i; }
+    }
+    return best;
+  }
+  var lastPointer = 'mouse';
+  canvas.addEventListener('pointerdown', function (e) { lastPointer = e.pointerType || 'mouse'; });
+  canvas.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse' || intro.state !== 'done') return;
+    var b = canvas.getBoundingClientRect();
+    var i = nearest(e.clientX - b.left - PAD, e.clientY - b.top - PAD, L.p * 0.9);
+    canvas.style.cursor = i >= 0 ? 'pointer' : 'default';
+    setHover(i);
+  });
+  canvas.addEventListener('pointerleave', function () { setHover(-1); cardEl.style.minHeight = ''; });
+  canvas.addEventListener('click', function (e) {
+    var b = canvas.getBoundingClientRect();
+    var tol = lastPointer === 'mouse' ? L.p * 0.9 : Math.max(18, L.p * 2.2);
+    var i = nearest(e.clientX - b.left - PAD, e.clientY - b.top - PAD, tol);
+    if (intro.state !== 'done') endIntro();
+    if (i >= 0) select(i, true);
+  });
+
+  // ---------- scaled-up estimate ----------
+  (function buildScaled() {
+    var est = DATA.estimate && typeof DATA.estimate === 'object' ? DATA.estimate : null;
+    var pop = Number(DATA.population) > 0 ? Number(DATA.population) : 0;
+    var rows = [];
+    GROUPS.forEach(function (g, gi) {
+      var e = est && own(est, g.key) ? est[g.key] : null;
+      if (!e || typeof e !== 'object') return;
+      var share = Number(e.share), lo = Number(e.low), hi = Number(e.high), n = Number(e.issues);
+      if (!(share >= 0 && share <= 1)) return;
+      var ci = lo >= 0 && hi <= 1 && lo <= hi;
+      rows.push({ gi: gi, share: share, lo: ci ? lo : -1, hi: ci ? hi : -1, n: n > 0 ? n : share * pop });
+    });
+    if (!rows.length) { $('scaled').hidden = true; return; }
+    $('scaledTitle').textContent = pop ? 'Scaled up to all ' + fmt(pop) + ' open issues' : 'Scaled up to all open issues';
+    var top = 0;
+    rows.forEach(function (r) { top = Math.max(top, r.hi >= 0 ? r.hi : r.share); });
+    var max = Math.max(0.1, Math.ceil(top * 10 - 1e-9) / 10);
+    var step = max > 0.6 ? 0.2 : 0.1, ticks = [];
+    for (var v = 0; v <= max + 1e-9; v += step) ticks.push(Math.round(v * 100) / 100);
+    function at(v) { return (v / max * 100) + '%'; }
+    function approx(n) { return fmt(n >= 1000 ? Math.round(n / 100) * 100 : Math.round(n / 10) * 10); }
+    var host = $('erows');
+    rows.forEach(function (r, k) {
+      var row = make('div', 'erow');
+      var name = make('div', 'ename');
+      var sw = make('span', 'sw s' + (r.gi + 1));
+      sw.setAttribute('aria-hidden', 'true');
+      name.appendChild(sw);
+      name.appendChild(document.createTextNode(GROUPS[r.gi].name));
+      var track = make('div', 'track');
+      track.setAttribute('aria-hidden', 'true');
+      ticks.forEach(function (tk) {
+        var gl = make('span', tk === 0 ? 'gl zero' : 'gl');
+        gl.style.left = at(tk);
+        track.appendChild(gl);
+      });
+      var bar = make('span', 'bar s' + (r.gi + 1));
+      bar.style.width = at(r.share);
+      bar.style.transitionDelay = (k * 0.08) + 's';
+      track.appendChild(bar);
+      if (r.lo >= 0) {
+        var wh = make('span', 'wh');
+        wh.style.left = at(r.lo);
+        wh.style.width = at(r.hi - r.lo);
+        wh.style.transitionDelay = (0.75 + k * 0.08) + 's';
+        track.appendChild(wh);
+      }
+      // "37% (34-41%), about 6,000" may wrap only before "about", never inside the range.
+      var val = make('div', 'eval'), pv = make('span', 'pv');
+      pv.appendChild(make('b', null, pct(r.share)));
+      if (r.lo >= 0) pv.appendChild(document.createTextNode(' (' + Math.round(r.lo * 100) + '-' + Math.round(r.hi * 100) + '%)'));
+      if (r.n > 0) pv.appendChild(document.createTextNode(','));
+      val.appendChild(pv);
+      if (r.n > 0) {
+        val.appendChild(document.createTextNode(' '));
+        val.appendChild(make('span', 'about', 'about ' + approx(r.n)));
+      }
+      row.appendChild(name); row.appendChild(track); row.appendChild(val);
+      host.appendChild(row);
+    });
+    var axisRow = make('div', 'erow axisrow');
+    axisRow.setAttribute('aria-hidden', 'true');
+    axisRow.appendChild(make('span'));
+    var axis = make('div', 'axis');
+    ticks.forEach(function (tk) {
+      var s = make('span', null, Math.round(tk * 100) + '%');
+      s.style.left = at(tk);
+      axis.appendChild(s);
+    });
+    axisRow.appendChild(axis);
+    axisRow.appendChild(make('span'));
+    host.appendChild(axisRow);
+  })();
+
+  // ---------- boot ----------
+  if (!N) {
+    $('cEmpty').firstElementChild.textContent = 'No issues to show.';
+    $('legend').hidden = true;
+  }
+  updateCounts();
+  // Until the reader picks one, the card shows the first square: the most-upvoted real bug.
+  selIdx = firstActive();
+  renderCard(selIdx);
+  var lastW = -1;
+  function onResize() {
+    var w = Math.floor(plot.clientWidth);
+    if (w !== lastW) { lastW = w; layout(); kick(); }
+    reportHeight();
+  }
+  onResize();
+  // Reduced motion: nothing to watch, so start on the sorted plot with the bars already drawn.
+  if (reduced) { scaledSeen = true; endIntro(); }
+
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onScheme = function () { readColors(); kick(); };
+    if (mq.addEventListener) mq.addEventListener('change', onScheme);
+    else if (mq.addListener) mq.addListener(onScheme);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var ioPlot = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && (en.intersectionRatio >= 0.35 || en.intersectionRect.height >= 240)) {
+          ioPlot.disconnect();
+          startIntro();
+        }
+      });
+    }, { threshold: [0, 0.2, 0.35, 0.5, 0.75, 1] });
+    ioPlot.observe(plot);
+    var ioScaled = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && en.intersectionRatio >= 0.3) {
+          scaledSeen = true;
+          ioScaled.disconnect();
+          // Wait a tick: if the plot came into view in the same pass, its sort runs first.
+          setTimeout(tryBars, 50);
+        }
+      });
+    }, { threshold: [0, 0.3, 0.6, 1] });
+    ioScaled.observe($('scaled'));
+  } else {
+    scaledSeen = true;
+    startIntro();
+  }
+
+  if (window.ResizeObserver) new ResizeObserver(onResize).observe(document.body);
+  window.addEventListener('resize', onResize);
+  window.addEventListener('load', function () { onResize(); reportHeight(); });
+  kick();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Be the Triage Bot</title>
+<style>
+  :root {
+    --bg: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+    --line: #e1e0d9; --line2: #c3c2b7; --line3: #a9a79e;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4;
+    --t1: rgba(42, 120, 214, .09); --t2: rgba(235, 104, 52, .09); --t3: rgba(27, 175, 122, .09);
+    --t4: rgba(237, 161, 0, .11); --t5: rgba(232, 123, 164, .11);
+    --lift: 0 6px 16px rgba(11, 11, 11, .13);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+      --line: #2c2c2a; --line2: #4a4a46; --line3: #5e5d58;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+      --t1: rgba(57, 135, 229, .15); --t2: rgba(217, 89, 38, .15); --t3: rgba(25, 158, 112, .15);
+      --t4: rgba(201, 133, 0, .17); --t5: rgba(213, 81, 129, .15);
+      --lift: 0 6px 16px rgba(0, 0, 0, .55);
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; overflow: hidden; }
+  body {
+    background: var(--bg); color: var(--ink); font-size: 14px; line-height: 1.4;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+  }
+  #app { padding: 14px 12px 12px; }
+  h2 { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 650; }
+  .lede { margin: 3px 0 8px; font-size: 13.5px; color: var(--ink2); }
+  .bar {
+    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+    gap: 2px 14px; margin: 0 0 10px;
+  }
+  #status { flex: 1 1 260px; min-width: 0; margin: 0; min-height: 1.4em; font-size: 13px; color: var(--ink2); }
+  @media (max-width: 699px) { #status { min-height: 2.8em; } }
+  #deck { flex: none; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .hand, .board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .hand { align-items: stretch; margin-bottom: 12px; }
+  .hand.gone { display: none; }
+  @media (max-width: 599px) {
+    .hand, .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; min-width: 0;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    cursor: grab; touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .card.pending { visibility: hidden; }
+  .card.sel { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+  .card.lift { transform: scale(1.02); box-shadow: var(--lift); }
+  .card.moving { z-index: 5; }
+  .card.dragging { z-index: 30; cursor: grabbing; box-shadow: var(--lift); transition: none; }
+  .card.sel.dragging { box-shadow: var(--lift), inset 0 0 0 1px var(--ink); }
+  .checked .card { cursor: pointer; }
+  .card.wrong { outline: 1.5px solid var(--ink); outline-offset: 2px; }
+  @media (hover: hover) {
+    .card:hover { border-color: var(--line3); }
+    .card.sel:hover { border-color: var(--ink); }
+  }
+  .pick {
+    display: block; width: 100%; margin: 0; padding: 9px 10px 3px; border: 0; border-radius: 7px;
+    background: none; color: inherit; font: inherit; text-align: left; cursor: inherit;
+    touch-action: manipulation;
+  }
+  .pick:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+  /* Ring the whole card, so the focus ring does not cut through the line under the button. */
+  @supports selector(:has(*)) {
+    .pick:focus-visible { outline: none; }
+    .card:has(.pick:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+    .card.wrong:has(.pick:focus-visible) { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+  }
+  .title {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+    font-size: 13px; line-height: 1.35; font-weight: 600; overflow-wrap: anywhere;
+  }
+  .sum {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+    margin-top: 4px; font-size: 12px; line-height: 1.4; color: var(--ink2); overflow-wrap: anywhere;
+  }
+  .card.open .title, .card.open .sum { display: block; -webkit-line-clamp: unset; overflow: visible; }
+  .blist .card:not(.open) .sum, .blist .card:not(.open) .meta { display: none; }
+  @media (max-width: 479px) {
+    .hand .card:not(.open) .sum, .hand .card:not(.open) .meta { display: none; }
+  }
+  .res { padding: 0 10px; }
+  .res:empty { display: none; }
+  .res p {
+    margin: 4px 0 2px; font-size: 12px; line-height: 1.4; overflow-wrap: anywhere;
+  }
+  .picked { color: var(--ink); font-weight: 600; }
+  .why { padding-left: 7px; border-left: 2px solid var(--line2); color: var(--ink2); }
+  .card.right:not(.open) .why { display: none; }
+  .cfoot {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; margin-top: auto;
+    padding: 0 10px 2px; font-size: 11.5px; color: var(--muted);
+  }
+  .meta { margin-right: auto; font-variant-numeric: tabular-nums; }
+  .gh {
+    display: inline-flex; align-items: center; min-height: 26px; margin-left: auto;
+    color: var(--ink2); text-decoration: underline; text-decoration-color: var(--line3);
+    text-underline-offset: 2px; border-radius: 2px;
+  }
+  .gh:hover { color: var(--ink); text-decoration-color: currentColor; }
+  .gh:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .tag {
+    display: inline-block; padding: 0 7px; border: 1px solid var(--line3); border-radius: 999px;
+    font-size: 11px; line-height: 17px; color: var(--ink);
+  }
+
+  .bucket {
+    display: flex; flex-direction: column; min-width: 0; padding: 5px 6px 6px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    transition: border-color .15s ease, background-color .15s ease, box-shadow .15s ease;
+  }
+  .b1 { --c: var(--s1); --t: var(--t1); }
+  .b2 { --c: var(--s2); --t: var(--t2); }
+  .b3 { --c: var(--s3); --t: var(--t3); }
+  .b4 { --c: var(--s4); --t: var(--t4); }
+  .b5 { --c: var(--s5); --t: var(--t5); }
+  .bhead {
+    display: flex; align-items: flex-start; gap: 7px; width: 100%; min-height: 30px; margin: 0 0 4px;
+    padding: 4px 4px 3px; border: 0; border-radius: 6px; background: none; color: var(--ink);
+    font: inherit; text-align: left; cursor: pointer; touch-action: manipulation;
+  }
+  .bhead:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .swatch { flex: none; width: 10px; height: 10px; margin-top: 4px; border-radius: 2px; background: var(--c); }
+  .btext { flex: 1 1 auto; min-width: 0; }
+  .bname { display: block; font-size: 13px; line-height: 1.35; font-weight: 650; }
+  .bdesc { display: block; font-size: 11.5px; line-height: 1.3; color: var(--muted); }
+  .bcount { flex: none; font-size: 12px; line-height: 1.5; color: var(--ink2); font-variant-numeric: tabular-nums; }
+  .blist { display: flex; flex-direction: column; gap: 6px; flex: 1 1 auto; min-height: 40px; border-radius: 6px; }
+  .blist:empty { border: 1px dashed var(--line2); }
+  .blist .pick { padding: 7px 8px 2px; }
+  .blist .res { padding: 0 8px; }
+  .blist .cfoot { padding: 0 8px 1px; }
+  .bucket.over { border-color: var(--c); background: var(--t); box-shadow: inset 0 0 0 1px var(--c); }
+  .checked .blist:empty { flex: 0 0 auto; min-height: 0; border: 0; }
+  .checked .blist:empty::after { content: "None in this deal"; display: block; padding: 2px 4px; font-size: 11.5px; color: var(--muted); }
+  .targeting .bucket { cursor: pointer; }
+  .targeting .blist:empty { border-color: var(--line3); }
+  @media (hover: hover) {
+    .targeting .bucket:hover { border-color: var(--c); }
+    .bhead:hover .bname { text-decoration: underline; text-decoration-color: var(--line3); text-underline-offset: 2px; }
+  }
+
+  .actions {
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+    gap: 6px; min-width: 0; padding: 6px 4px;
+  }
+  .actions p { margin: 0; }
+  #progress, #total { font-size: 12.5px; color: var(--ink2); font-variant-numeric: tabular-nums; }
+  #score { font-size: 14px; line-height: 1.35; font-weight: 650; font-variant-numeric: tabular-nums; }
+  #progress:empty, #score:empty, #total:empty { display: none; }
+  .btn {
+    min-height: 34px; padding: 6px 18px; border: 1px solid var(--ink); border-radius: 999px;
+    background: var(--ink); color: var(--bg); font: inherit; font-size: 13px; font-weight: 600;
+    cursor: pointer; touch-action: manipulation;
+  }
+  .btn:disabled { background: transparent; color: var(--muted); border-color: var(--line2); font-weight: 500; cursor: default; }
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .btn[hidden] { display: none; }
+  .foot { margin: 12px 0 0; font-size: 11.5px; line-height: 1.45; color: var(--muted); }
+  .sr {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;
+    overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .bucket { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <h2>You be the triage bot</h2>
+  <p class="lede">Put each issue where you think it belongs, then check.</p>
+  <div class="bar">
+    <p id="status" aria-live="polite"></p>
+    <span id="deck"></span>
+  </div>
+  <div id="hand" class="hand" role="group" aria-label="Cards to sort"></div>
+  <div id="board" class="board">
+    <div id="actions" class="actions">
+      <p id="progress"></p>
+      <button id="check" class="btn" type="button" disabled>Check</button>
+      <p id="score" aria-live="polite"></p>
+      <p id="total"></p>
+      <button id="again" class="btn" type="button" hidden>Deal again</button>
+    </div>
+  </div>
+  <p class="foot">The answers are my pipeline's calls. Only the fixed or duplicate ones were checked by two separate readers. They can still be wrong; every card links to the issue.</p>
+</div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  'use strict';
+
+  // Buckets in fixed order. Each one maps to a color slot via the .b1 to .b5 classes.
+  var BUCKETS = [
+    { id: 'bug', name: 'Real bug', desc: 'Broken, worth fixing' },
+    { id: 'feature', name: 'Feature request', desc: 'Asks for something new' },
+    { id: 'close', name: 'Close it', desc: 'Fixed or duplicate' },
+    { id: 'ask', name: 'Ask the reporter', desc: 'Needs info or a retest' },
+    { id: 'noact', name: 'Not actionable', desc: 'Off-topic, support, or works as intended' }
+  ];
+  var HAND_SIZE = 6, MOVE_MS = 380, CHECK_MS = 720, HOLD_MS = 200;
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var ISSUE_URL = 'https://github.com/anthropics/claude-code/issues/';
+  var EASE = 'cubic-bezier(.2,.8,.2,1)';
+
+  var mm = window.matchMedia ? function (q) { return window.matchMedia(q); } : function () { return { matches: false }; };
+  var reduced = mm('(prefers-reduced-motion: reduce)').matches;
+  var coarse = mm('(pointer: coarse)').matches;
+  var narrow = mm('(max-width: 599px)');
+  var canAnimate = !reduced && typeof Element.prototype.animate === 'function';
+
+  function $(id) { return document.getElementById(id); }
+  var app = $('app'), handEl = $('hand'), board = $('board'), actions = $('actions');
+  var statusEl = $('status'), deckEl = $('deck'), progressEl = $('progress');
+  var checkBtn = $('check'), againBtn = $('again'), scoreEl = $('score'), totalEl = $('total');
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  // Bidi override characters are dropped so a title cannot flip how it reads.
+  function str(v, max) {
+    return typeof v === 'string' ? v.replace(/[\u202a-\u202e\u2066-\u2069]/g, '').replace(/\s+/g, ' ').trim().slice(0, max) : '';
+  }
+  function has(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+
+  var byId = {};
+  BUCKETS.forEach(function (b, i) { b.i = i; byId[b.id] = b; });
+
+  // Read the deck. Every string is shown later with textContent only.
+  var deck = [];
+  (function load() {
+    var raw = null;
+    try { raw = JSON.parse($('data').textContent); } catch (e) { raw = null; }
+    var list = raw && Array.isArray(raw.cards) ? raw.cards : [];
+    var seen = {};
+    for (var i = 0; i < list.length; i++) {
+      var c = list[i];
+      if (!c || typeof c !== 'object') continue;
+      var n = Number(c.n);
+      if (!Number.isInteger(n) || n < 1 || n > 99999999 || has(seen, n)) continue;
+      if (typeof c.bucket !== 'string' || !has(byId, c.bucket)) continue;
+      seen[n] = 1;
+      var up = Number(c.up);
+      deck.push({
+        n: n, t: str(c.t, 600) || 'Issue ' + n, sum: str(c.sum, 600), bucket: c.bucket,
+        why: str(c.why, 600), up: isFinite(up) && up >= 0 ? Math.round(up) : 0, opened: str(c.opened, 10)
+      });
+    }
+  })();
+
+  function metaText(c) {
+    var parts = [];
+    var m = /^(\d{4})-(\d{2})/.exec(c.opened);
+    if (m && +m[2] >= 1 && +m[2] <= 12) parts.push('Opened ' + MONTHS[+m[2] - 1] + ' ' + m[1]);
+    if (c.up > 0) parts.push(c.up + (c.up === 1 ? ' upvote' : ' upvotes'));
+    return parts.join(', ');
+  }
+
+  // Build the five buckets in front of the actions cell.
+  var B = {};
+  BUCKETS.forEach(function (b) {
+    var root = el('div', 'bucket b' + (b.i + 1));
+    var head = el('button', 'bhead');
+    head.type = 'button';
+    var sw = el('span', 'swatch');
+    sw.setAttribute('aria-hidden', 'true');
+    var txt = el('span', 'btext');
+    txt.appendChild(el('span', 'bname', b.name));
+    txt.appendChild(el('span', 'bdesc', b.desc));
+    var cnt = el('span', 'bcount');
+    cnt.setAttribute('aria-hidden', 'true');
+    head.appendChild(sw);
+    head.appendChild(txt);
+    head.appendChild(cnt);
+    var list = el('div', 'blist');
+    root.appendChild(head);
+    root.appendChild(list);
+    board.insertBefore(root, actions);
+    B[b.id] = { root: root, head: head, list: list, cnt: cnt };
+    head.addEventListener('click', function () { placeSelected(b.id, true); });
+    root.addEventListener('click', function (e) {
+      if (e.target.closest('.card') || e.target.closest('.bhead')) return;
+      placeSelected(b.id, false);
+    });
+  });
+
+  // State.
+  var pool = [], lastDeal = [], cards = [], selected = null, drag = null, overId = null;
+  var phase = 'idle', busy = false, collapsing = false, keyboard = false, suppressClick = false;
+  var deals = 0, totalRight = 0, totalSeen = 0, reshuffled = false, flipSeq = 0;
+  var minDistinct = (function () {
+    var o = {};
+    deck.forEach(function (c) { o[c.bucket] = 1; });
+    return Math.min(3, Object.keys(o).length);
+  })();
+
+  function hint() {
+    return coarse
+      ? 'Tap a card, then tap a bucket. Or press and hold a card to drag it.'
+      : 'Drag each card onto a bucket, or click a card and then a bucket.';
+  }
+  function allPlacedText() {
+    return (cards.length === 6 ? 'All six are' : 'All ' + cards.length + ' are') + ' sorted. Check them, or move a card first.';
+  }
+  function setStatus(t) { if (statusEl.textContent !== t) statusEl.textContent = t; }
+  function placedCount() {
+    var k = 0;
+    cards.forEach(function (s) { if (s.placed) k++; });
+    return k;
+  }
+  function deckText() {
+    if (!pool.length) return 'Deck empty, reshuffles next';
+    return (reshuffled ? 'Reshuffled, ' : '') + pool.length + ' left in the deck';
+  }
+
+  // Deal from the pool without repeats until it runs out. Each deal covers
+  // at least three different correct buckets when the deck allows it.
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = a[i];
+      a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  function distinct(arr) {
+    var o = {};
+    arr.forEach(function (c) { o[c.bucket] = 1; });
+    return Object.keys(o).length;
+  }
+  function draw() {
+    var size = Math.min(HAND_SIZE, deck.length);
+    reshuffled = false;
+    if (pool.length < size || distinct(pool) < minDistinct) {
+      var fresh = deck.filter(function (c) { return pool.indexOf(c) < 0 && lastDeal.indexOf(c) < 0; });
+      if (pool.length + fresh.length < size) fresh = deck.filter(function (c) { return pool.indexOf(c) < 0; });
+      reshuffled = deals > 1;
+      pool = pool.concat(shuffle(fresh));
+    }
+    var picks = [], used = {}, have = {}, i;
+    for (i = 0; i < pool.length && Object.keys(have).length < minDistinct; i++) {
+      if (!has(have, pool[i].bucket)) { have[pool[i].bucket] = 1; picks.push(pool[i]); used[i] = 1; }
+    }
+    for (i = 0; i < pool.length && picks.length < size; i++) {
+      if (!used[i]) { picks.push(pool[i]); used[i] = 1; }
+    }
+    pool = pool.filter(function (c, k) { return !used[k]; });
+    lastDeal = picks.slice();
+    return shuffle(picks);
+  }
+
+  function makeCard(c) {
+    var root = el('div', 'card');
+    var btn = el('button', 'pick');
+    btn.type = 'button';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.appendChild(el('span', 'sr', 'Issue ' + c.n + '. '));
+    btn.appendChild(el('span', 'title', c.t));
+    if (c.sum) btn.appendChild(el('span', 'sum', c.sum));
+    var where = el('span', 'sr', ' Not placed yet.');
+    btn.appendChild(where);
+    var res = el('div', 'res');
+    var foot = el('div', 'cfoot');
+    var meta = metaText(c);
+    if (meta) foot.appendChild(el('span', 'meta', meta));
+    var a = el('a', 'gh', 'Open #' + c.n);
+    a.href = ISSUE_URL + c.n;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    foot.appendChild(a);
+    root.appendChild(btn);
+    root.appendChild(res);
+    root.appendChild(foot);
+    var s = { c: c, root: root, btn: btn, where: where, res: res, foot: foot, placed: null, slot: 0 };
+    btn.addEventListener('click', function () { if (!suppressClick) onCardTap(s); });
+    root.addEventListener('click', function (e) {
+      if (suppressClick || btn.contains(e.target) || e.target.closest('a')) return;
+      onCardTap(s);
+    });
+    root.addEventListener('pointerdown', function (e) { onDown(e, s); });
+    root.addEventListener('contextmenu', function (e) { if (drag && drag.s === s) e.preventDefault(); });
+    return s;
+  }
+
+  // Unplaced cards keep their own grid cell, and each row keeps the height it
+  // was dealt with, so a placed card leaves a gap and the rest of the hand stays put.
+  function positionHand() {
+    var k = narrow.matches ? 2 : 3;
+    cards.forEach(function (s) {
+      s.root.style.gridColumn = s.placed ? '' : String(s.slot % k + 1);
+      s.root.style.gridRow = s.placed ? '' : String(Math.floor(s.slot / k) + 1);
+    });
+  }
+  function holdRows() {
+    if (handEl.classList.contains('gone') || collapsing) return;
+    var k = narrow.matches ? 2 : 3, rows = [], i;
+    var open = selected && !selected.placed ? selected.root : null;
+    handEl.style.gridTemplateRows = '';
+    if (open) open.classList.remove('open');
+    cards.forEach(function (s) {
+      if (s.placed) return;
+      var r = Math.floor(s.slot / k);
+      rows[r] = Math.max(rows[r] || 0, s.root.offsetHeight);
+    });
+    if (open) open.classList.add('open');
+    for (i = 0; i < rows.length; i++) rows[i] = 'minmax(' + (rows[i] || 0) + 'px, auto)';
+    handEl.style.gridTemplateRows = rows.join(' ');
+  }
+
+  function stopAnims(e) {
+    if (e.getAnimations) e.getAnimations().forEach(function (a) { a.cancel(); });
+  }
+  // Safety net: if the animation clock stalls (a throttled or offscreen frame),
+  // jump the cards to their end state so none stay hidden or out of place.
+  function settleLater(anims, ms) {
+    setTimeout(function () {
+      anims.forEach(function (a) {
+        if (a.playState === 'running' || a.playState === 'pending' || a.pending) {
+          try { a.finish(); } catch (err) { /* nothing to settle */ }
+        }
+      });
+    }, ms + 400);
+  }
+
+  // FLIP: measure every card, change the DOM, then slide each card from where it was.
+  function flip(mutate, opt) {
+    opt = opt || {};
+    var els = cards.map(function (s) { return s.root; });
+    var first = els.map(function (e) { return e.getBoundingClientRect(); });
+    if (canAnimate) els.forEach(stopAnims);
+    mutate();
+    reportHeight();
+    if (!canAnimate) return;
+    var anims = [], longest = 0;
+    els.forEach(function (e, i) {
+      if (!e.isConnected) return;
+      var a = first[i], b = e.getBoundingClientRect();
+      var dx = a.left - b.left, dy = a.top - b.top;
+      if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
+      var id = ++flipSeq, dur = opt.duration || MOVE_MS, delay = opt.delay ? opt.delay(cards[i]) : 0;
+      e._flip = id;
+      e.classList.add('moving');
+      var anim = e.animate([
+        { transform: 'translate(' + dx + 'px,' + dy + 'px)' },
+        { transform: 'translate(0px,0px)' }
+      ], { duration: dur, delay: delay, easing: EASE, fill: 'backwards' });
+      anim.onfinish = function () { if (e._flip === id) e.classList.remove('moving'); };
+      anims.push(anim);
+      longest = Math.max(longest, dur + delay);
+    });
+    if (anims.length) settleLater(anims, longest);
+  }
+
+  function labelBuckets() {
+    BUCKETS.forEach(function (b, i) {
+      var k = B[b.id].list.children.length;
+      var label = b.name + ', ' + b.desc + '. ' + (k === 1 ? '1 card' : k + ' cards') + '.';
+      if (selected && phase === 'play') label = 'Put #' + selected.c.n + ' in ' + b.name + ', key ' + (i + 1) + '. ' + label;
+      B[b.id].head.setAttribute('aria-label', label);
+    });
+  }
+  function updateCounts() {
+    BUCKETS.forEach(function (b) {
+      var k = B[b.id].list.children.length;
+      B[b.id].cnt.textContent = k ? String(k) : '';
+    });
+    labelBuckets();
+  }
+  function updateProgress() {
+    var p = placedCount(), n = cards.length;
+    if (phase === 'checked') {
+      progressEl.textContent = '';
+      checkBtn.hidden = true;
+      againBtn.hidden = false;
+      againBtn.disabled = busy;
+      return;
+    }
+    progressEl.textContent = n ? p + ' of ' + n + ' placed' : '';
+    checkBtn.hidden = false;
+    againBtn.hidden = true;
+    checkBtn.disabled = busy || collapsing || !n || p < n;
+  }
+
+  function onCardTap(s) {
+    if (busy) return;
+    if (phase === 'checked') {
+      flip(function () {
+        var open = s.root.classList.toggle('open');
+        s.btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      return;
+    }
+    if (phase !== 'play') return;
+    // With a card picked up, tapping anywhere in a bucket (its cards included) drops it there.
+    if (selected && selected !== s && s.placed && !keyboard) { moveCard(selected, s.placed); return; }
+    select(selected === s ? null : s);
+  }
+
+  function select(s) {
+    var prev = selected;
+    flip(function () {
+      if (prev) { prev.root.classList.remove('sel', 'open'); prev.btn.setAttribute('aria-pressed', 'false'); }
+      selected = s;
+      if (s) { s.root.classList.add('sel', 'open'); s.btn.setAttribute('aria-pressed', 'true'); }
+      app.classList.toggle('targeting', !!s);
+    });
+    labelBuckets();
+    if (s) setStatus('Now pick a bucket for #' + s.c.n + (keyboard ? '. Keys 1 to 5 work too.' : '.'));
+    else if (phase === 'play') setStatus(placedCount() === cards.length ? allPlacedText() : hint());
+    reportHeight();
+  }
+
+  function placeSelected(id, viaHead) {
+    if (phase !== 'play' || busy) return;
+    if (!selected) {
+      if (viaHead) setStatus('Pick a card first, then a bucket.');
+      return;
+    }
+    moveCard(selected, id);
+  }
+
+  function moveCard(s, id) {
+    if (s.placed === id) {
+      flip(function () { s.root.style.transform = ''; s.root.classList.remove('dragging', 'lift'); });
+      if (selected) select(null);
+      return;
+    }
+    var fromHand = !s.placed;
+    var focusAfter = keyboard;
+    flip(function () {
+      s.root.style.transform = '';
+      s.root.classList.remove('dragging', 'lift');
+      if (selected) { selected.root.classList.remove('sel', 'open'); selected.btn.setAttribute('aria-pressed', 'false'); }
+      selected = null;
+      app.classList.remove('targeting');
+      s.placed = id;
+      s.root.style.gridColumn = '';
+      s.root.style.gridRow = '';
+      B[id].list.appendChild(s.root);
+      s.where.textContent = ' In ' + byId[id].name + '.';
+      updateCounts();
+    });
+    var done = placedCount() === cards.length;
+    setStatus(done ? allPlacedText() : '#' + s.c.n + ' is in ' + byId[id].name + '.');
+    updateProgress();
+    reportHeight();
+    if (fromHand && done) collapseHand();
+    if (focusAfter) {
+      var next = null;
+      for (var i = 0; i < cards.length && !next; i++) if (!cards[i].placed) next = cards[i];
+      (next ? next.btn : s.btn).focus();
+    }
+  }
+
+  // When the last card leaves the hand, fold the empty hand away so the
+  // buckets and the Check button slide up together.
+  function collapseHand() {
+    collapsing = true;
+    updateProgress();
+    function finish() {
+      handEl.classList.add('gone');
+      handEl.removeAttribute('style');
+      collapsing = false;
+      updateProgress();
+      reportHeight();
+      var f = document.activeElement;
+      if (keyboard && phase === 'play' && (!f || f === document.body || (f.classList && f.classList.contains('pick')))) checkBtn.focus();
+    }
+    setTimeout(function () {
+      if (!canAnimate) { finish(); return; }
+      var h = handEl.getBoundingClientRect().height;
+      handEl.style.height = h + 'px';
+      handEl.style.overflow = 'hidden';
+      void handEl.offsetHeight;
+      handEl.style.transition = 'height .4s cubic-bezier(.3,.7,.2,1), margin-bottom .4s cubic-bezier(.3,.7,.2,1)';
+      handEl.style.height = '0px';
+      handEl.style.marginBottom = '0px';
+      setTimeout(finish, 420);
+    }, canAnimate ? MOVE_MS : 0);
+  }
+
+  // Make room for a new hand (animated after the first deal), then deal into it.
+  function openHand(animate, done) {
+    handEl.classList.remove('gone');
+    handEl.removeAttribute('style');
+    holdRows();
+    if (!animate) { done(); return; }
+    var h = Math.ceil(handEl.getBoundingClientRect().height);
+    handEl.style.height = '0px';
+    handEl.style.marginBottom = '0px';
+    handEl.style.overflow = 'hidden';
+    void handEl.offsetHeight;
+    handEl.style.transition = 'height .36s cubic-bezier(.3,.7,.2,1), margin-bottom .36s cubic-bezier(.3,.7,.2,1)';
+    handEl.style.height = h + 'px';
+    handEl.style.marginBottom = '';
+    setTimeout(function () {
+      handEl.style.transition = '';
+      handEl.style.height = '';
+      handEl.style.overflow = '';
+      done();
+    }, 380);
+  }
+
+  // The post loads this frame lazily, well before the reader scrolls to it, so
+  // the first hand waits until it is on screen to deal in.
+  function whenSeen(now, go) {
+    if (now || !canAnimate || !window.IntersectionObserver) { go(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      var en = entries[entries.length - 1];
+      if (en.isIntersecting && (en.intersectionRatio >= 0.3 || en.intersectionRect.height >= 160)) {
+        io.disconnect();
+        go();
+      }
+    }, { threshold: [0, 0.1, 0.2, 0.3, 0.5, 1] });
+    io.observe(handEl);
+  }
+
+  function animateDeal() {
+    if (!canAnimate) return;
+    var d = deckEl.getBoundingClientRect();
+    var ox = d.width ? d.left + d.width / 2 : handEl.getBoundingClientRect().right - 40;
+    var oy = d.width ? d.top + d.height / 2 : handEl.getBoundingClientRect().top;
+    var anims = [];
+    cards.forEach(function (s, i) {
+      var r = s.root.getBoundingClientRect();
+      var dx = ox - (r.left + r.width / 2), dy = oy - (r.top + r.height / 2);
+      var id = ++flipSeq;
+      s.root._flip = id;
+      s.root.classList.add('moving');
+      var anim = s.root.animate([
+        { transform: 'translate(' + dx + 'px,' + dy + 'px) perspective(800px) rotateY(-80deg) scale(.4)', opacity: 0 },
+        { opacity: 1, offset: 0.3 },
+        { transform: 'translate(0px,0px) perspective(800px) rotateY(0deg) scale(1)', opacity: 1 }
+      ], { duration: 620, delay: 80 + i * 95, easing: 'cubic-bezier(.22,.75,.25,1)', fill: 'backwards' });
+      anim.onfinish = function () { if (s.root._flip === id) s.root.classList.remove('moving'); };
+      anims.push(anim);
+    });
+    settleLater(anims, 620 + 80 + cards.length * 95);
+  }
+
+  function deal(again) {
+    deals++;
+    cards.forEach(function (s) { s.root.remove(); });
+    cards = draw().map(makeCard);
+    selected = null;
+    phase = 'play';
+    app.classList.remove('checked', 'targeting');
+    cards.forEach(function (s, i) {
+      s.slot = i;
+      if (canAnimate) s.root.classList.add('pending');
+      handEl.appendChild(s.root);
+    });
+    positionHand();
+    updateCounts();
+    scoreEl.textContent = '';
+    setStatus(hint());
+    deckEl.textContent = deckText();
+    busy = true;
+    updateProgress();
+    openHand(canAnimate && again, function () {
+      whenSeen(again, function () {
+        cards.forEach(function (s) { s.root.classList.remove('pending'); });
+        busy = false;
+        updateProgress();
+        animateDeal();
+        reportHeight();
+        if (again && keyboard && cards[0]) cards[0].btn.focus();
+      });
+    });
+    reportHeight();
+  }
+
+  // Check: right cards get a tag, wrong ones slide to the pipeline's bucket
+  // one after another and show the evidence line.
+  function doCheck() {
+    if (phase !== 'play' || busy || collapsing || placedCount() < cards.length) return;
+    var hadFocus = document.activeElement === checkBtn;
+    var right = 0, wrongs = [];
+    phase = 'checked';
+    app.classList.add('checked');
+    app.classList.remove('targeting');
+    flip(function () {
+      if (selected) selected.root.classList.remove('sel', 'open');
+      selected = null;
+      cards.forEach(function (s) {
+        var ok = s.placed === s.c.bucket;
+        s.btn.removeAttribute('aria-pressed');
+        s.btn.setAttribute('aria-expanded', 'false');
+        if (ok) {
+          right++;
+          s.root.classList.add('right');
+          s.foot.insertBefore(el('span', 'tag', 'right'), s.foot.firstChild);
+          if (s.c.why) s.res.appendChild(el('p', 'why', s.c.why));
+          s.where.textContent = ' In ' + byId[s.c.bucket].name + '. Matches the pipeline.';
+        } else {
+          s.root.classList.add('wrong');
+          s.res.appendChild(el('p', 'picked', 'You picked ' + byId[s.placed].name));
+          if (s.c.why) s.res.appendChild(el('p', 'why', s.c.why));
+          s.where.textContent = ' Moved to ' + byId[s.c.bucket].name + '. You picked ' + byId[s.placed].name + '.';
+          B[s.c.bucket].list.appendChild(s.root);
+          wrongs.push(s);
+        }
+      });
+      updateCounts();
+    }, {
+      duration: CHECK_MS,
+      delay: function (s) { var k = wrongs.indexOf(s); return k < 0 ? 0 : 120 + k * 170; }
+    });
+    // Fade in the tags right away and each evidence line once its card has landed.
+    if (canAnimate) {
+      var fades = [];
+      cards.forEach(function (s) {
+        var k = wrongs.indexOf(s);
+        var targets = k < 0 ? s.foot.querySelectorAll('.tag') : s.res.children;
+        var delay = k < 0 ? 150 : 120 + k * 170 + Math.round(CHECK_MS * 0.55);
+        Array.prototype.forEach.call(targets, function (t) {
+          fades.push(t.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 320, delay: delay, easing: 'ease-out', fill: 'backwards' }));
+        });
+      });
+      settleLater(fades, CHECK_MS + wrongs.length * 170 + 320);
+    }
+    totalRight += right;
+    totalSeen += cards.length;
+    scoreEl.textContent = right + ' of ' + cards.length + ' match the pipeline';
+    totalEl.textContent = deals > 1 ? 'Running total ' + totalRight + ' of ' + totalSeen : '';
+    var verb = coarse ? 'Tap' : 'Click';
+    setStatus(wrongs.length
+      ? 'Outlined cards moved to the pipeline\'s bucket. ' + verb + ' any card to read more.'
+      : 'All of them match the pipeline. ' + verb + ' any card to read why.');
+    updateProgress();
+    reportHeight();
+    if (hadFocus || keyboard) againBtn.focus();
+  }
+
+  function dealAgain() {
+    if (busy || phase !== 'checked') return;
+    busy = true;
+    updateProgress();
+    var old = cards.slice();
+    function go() { busy = false; deal(true); }
+    if (!canAnimate || !old.length) { go(); return; }
+    old.forEach(function (s, i) {
+      stopAnims(s.root);
+      s.root.animate([
+        { opacity: 1, transform: 'translateY(0px) scale(1)' },
+        { opacity: 0, transform: 'translateY(8px) scale(.96)' }
+      ], { duration: 200, delay: i * 30, easing: 'ease-in', fill: 'forwards' });
+    });
+    setTimeout(go, 200 + old.length * 30);
+  }
+
+  // Drag with pointer events. Mouse and pen start after a few pixels of
+  // movement. Touch needs a short hold first, so a normal swipe still scrolls the page.
+  function bucketAt(x, y) {
+    for (var i = 0; i < BUCKETS.length; i++) {
+      var r = B[BUCKETS[i].id].root.getBoundingClientRect();
+      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return BUCKETS[i].id;
+    }
+    return null;
+  }
+  function setOver(id) {
+    if (id === overId) return;
+    if (overId) B[overId].root.classList.remove('over');
+    overId = id;
+    if (id) B[id].root.classList.add('over');
+  }
+
+  function onDown(e, s) {
+    if (phase !== 'play' || busy || drag) return;
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    if (e.target.closest && e.target.closest('a')) return;
+    drag = {
+      s: s, id: e.pointerId, type: e.pointerType, x0: e.clientX, y0: e.clientY,
+      active: false, armed: e.pointerType !== 'touch', timer: 0
+    };
+    if (!drag.armed) {
+      drag.timer = setTimeout(function () {
+        if (drag && drag.s === s && !drag.active) { drag.armed = true; s.root.classList.add('lift'); }
+      }, HOLD_MS);
+    }
+  }
+
+  function startDrag() {
+    var s = drag.s;
+    drag.active = true;
+    clearTimeout(drag.timer);
+    s.root.classList.remove('lift');
+    var before = s.root.getBoundingClientRect();
+    if (selected && selected !== s) select(null);
+    stopAnims(s.root);
+    var after = s.root.getBoundingClientRect();
+    drag.x0 += after.left - before.left;
+    drag.y0 += after.top - before.top;
+    s.root.classList.add('dragging');
+    try { s.root.setPointerCapture(drag.id); } catch (err) { /* capture is optional */ }
+  }
+
+  function endDrag(e) {
+    var d = drag;
+    drag = null;
+    if (!d) return;
+    clearTimeout(d.timer);
+    d.s.root.classList.remove('lift');
+    if (!d.active) return;
+    suppressClick = true;
+    setTimeout(function () { suppressClick = false; }, 0);
+    setOver(null);
+    var target = e ? bucketAt(e.clientX, e.clientY) : null;
+    if (target && phase === 'play') moveCard(d.s, target);
+    else flip(function () { d.s.root.style.transform = ''; d.s.root.classList.remove('dragging'); });
+  }
+
+  window.addEventListener('pointermove', function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    if (drag.type === 'mouse' && e.buttons === 0) { endDrag(drag.active ? e : null); return; }
+    var dx = e.clientX - drag.x0, dy = e.clientY - drag.y0;
+    if (!drag.active) {
+      if (!drag.armed) {
+        if (dx * dx + dy * dy > 100) endDrag(null);
+        return;
+      }
+      if (dx * dx + dy * dy < (drag.type === 'touch' ? 9 : 25)) return;
+      startDrag();
+      dx = e.clientX - drag.x0;
+      dy = e.clientY - drag.y0;
+    }
+    drag.s.root.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+    var over = bucketAt(e.clientX, e.clientY);
+    setOver(over && over !== drag.s.placed ? over : null);
+    if (e.cancelable) e.preventDefault();
+  }, { passive: false });
+  window.addEventListener('pointerup', function (e) { if (drag && e.pointerId === drag.id) endDrag(e); });
+  window.addEventListener('pointercancel', function (e) { if (drag && e.pointerId === drag.id) endDrag(null); });
+  window.addEventListener('blur', function () { if (drag) endDrag(null); });
+  document.addEventListener('touchmove', function (e) { if (drag && drag.armed && e.cancelable) e.preventDefault(); }, { passive: false });
+
+  // Keyboard: Enter or Space picks a card, then a bucket button (or keys 1 to 5) places it.
+  document.addEventListener('keydown', function (e) {
+    keyboard = true;
+    if (phase !== 'play' || busy) return;
+    if (e.key === 'Escape' && selected) { e.preventDefault(); select(null); return; }
+    if (selected && e.key.length === 1 && e.key >= '1' && e.key <= '5' && !e.altKey && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      moveCard(selected, BUCKETS[+e.key - 1].id);
+    }
+  }, true);
+  document.addEventListener('pointerdown', function () { keyboard = false; }, true);
+
+  checkBtn.addEventListener('click', doCheck);
+  againBtn.addEventListener('click', dealAgain);
+
+  function reportHeight() {
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'chirpy-interactive-height', height: h }, '*');
+    }
+  }
+  var lastW = document.documentElement.clientWidth;
+  window.addEventListener('resize', function () {
+    var w = document.documentElement.clientWidth;
+    if (w !== lastW) {
+      lastW = w;
+      positionHand();
+      if (cards.some(function (s) { return !s.placed; })) holdRows();
+    }
+    reportHeight();
+  });
+  window.addEventListener('load', reportHeight);
+  if (window.ResizeObserver) new ResizeObserver(reportHeight).observe(document.body);
+
+  if (!deck.length) {
+    setStatus('No cards to show.');
+    handEl.classList.add('gone');
+    checkBtn.hidden = true;
+    reportHeight();
+    return;
+  }
+  deal(false);
+})();
+</script>
+</body>
+</html>

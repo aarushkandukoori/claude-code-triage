@@ -1,0 +1,5016 @@
+{
+ "seed": 20261106,
+ "population": 16112,
+ "strata_sizes": {
+  "top": 150,
+  "security": 1574,
+  "rest": 14388
+ },
+ "picked": {
+  "top": 150,
+  "security": 250,
+  "rest": 600
+ },
+ "sample": [
+  {
+   "number": 769,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 826,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 1234,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 1455,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 1547,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 1669,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 1757,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 1785,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 2118,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 2254,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 2511,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 2939,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 3172,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 3301,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 3433,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 4462,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 4556,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 4851,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 4953,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 5088,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 5140,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 6850,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 7490,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 7547,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 8660,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 9716,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 9740,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 9881,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 10065,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 10199,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 10375,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 11315,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 12346,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 12619,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 12925,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 12962,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 13585,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 13600,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 13843,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 14002,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 14027,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 14061,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 14200,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 14202,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 14280,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 14634,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 14818,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 14920,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 15148,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 15199,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 15542,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 15881,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 15942,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 16082,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 16128,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 16157,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 16270,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 16274,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 16550,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 16600,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 16856,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 17428,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 17432,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 17727,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 17968,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 18170,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 18435,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 18467,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 18748,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 18949,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 18950,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 19649,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 19673,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 19877,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 20553,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 20697,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 21151,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 22265,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 22543,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 23134,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 23416,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 23622,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 23627,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 23706,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 24055,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 24122,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 24189,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 24968,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 25045,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 26224,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 26784,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 26904,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 27242,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 27282,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 27302,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 27474,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 27801,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 27848,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 27957,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 28018,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 28240,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 28330,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 28729,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 28791,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 28795,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 28848,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 28986,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 29017,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 29045,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 29214,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 29388,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 29579,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 29922,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 30021,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 30027,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 30031,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 30154,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 30519,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 30675,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 30677,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 31005,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 31480,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 31901,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 32000,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 32469,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 32479,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 32573,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 32726,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 32733,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 32982,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 33037,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 33165,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 33323,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 33350,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 33932,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 34229,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 34255,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 35637,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 36151,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 36168,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 36949,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 37628,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 37951,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 38005,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 38179,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 38335,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 38993,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 39429,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 40043,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 41456,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 41788,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 43113,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 43326,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 44763,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 45132,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 45596,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 45756,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 45937,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 46621,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 46917,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 46987,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 47509,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 48158,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 48181,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 48322,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 48949,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 49268,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 50270,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 52517,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 52924,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 53454,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 54054,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 55621,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 57371,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 62123,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 62199,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 62476,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 62699,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 63025,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 63725,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 65216,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 65833,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 65961,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 68809,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 69238,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 70014,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 70225,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 71539,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 71542,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 72215,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 73107,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 73638,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 73697,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 74260,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 74547,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 75654,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 75692,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 76303,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 76561,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 76602,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 77084,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 77136,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 77261,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 77578,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 77697,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 77751,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 77873,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 78143,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 78720,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 78857,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 78918,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 79218,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 79305,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 79606,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 79706,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 79722,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 79753,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 79793,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 80093,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 80527,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 80702,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 80806,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 80906,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 80988,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 81128,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 81138,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 81210,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 81317,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 81425,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 82056,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 82134,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 82184,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 82311,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 82360,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 82434,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 82489,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 82833,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 83033,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 83274,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 83380,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 83665,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 83768,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 83789,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 83795,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 84260,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 84540,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 84756,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 84792,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 84862,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 84954,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 85018,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 85026,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 85027,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 85254,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 85294,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 85421,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 85511,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 85548,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 86036,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 86139,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 86198,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 86205,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 86858,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 86879,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 87012,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 87053,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 87647,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 87940,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 87963,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 87971,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 87984,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 88137,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 88188,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 88285,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 88293,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 88418,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 88790,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 88877,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89161,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 89223,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89262,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89370,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89489,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89603,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89651,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89656,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 89673,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 89894,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 89928,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 90064,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90122,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90147,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90341,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90379,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90412,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90494,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90507,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90630,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90867,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 90887,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91110,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91242,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91364,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91371,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91385,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91394,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91465,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91511,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91547,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91592,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91617,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91632,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91644,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91650,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91655,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91668,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91681,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91683,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91720,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91794,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91828,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91848,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 91870,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 91902,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91941,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91957,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91963,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91964,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 91969,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92020,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92041,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92064,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92089,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92098,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92120,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92244,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92295,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92306,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92338,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92386,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92400,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92411,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92470,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92522,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92550,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92568,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92583,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92639,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92647,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92653,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92664,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92694,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92716,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92743,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92794,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92828,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92842,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92847,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92901,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 92974,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 92980,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93002,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93008,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93010,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93031,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93040,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93093,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93099,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93115,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93152,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93175,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93260,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93277,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93287,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93307,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93310,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93350,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93392,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93409,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93417,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93421,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93436,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93442,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93469,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93477,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93495,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93526,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93529,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93534,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93676,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93684,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93703,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93719,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93732,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93738,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93746,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93765,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93791,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93796,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93811,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93833,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93845,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93857,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93895,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93914,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93923,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93950,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 93958,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 93990,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94003,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94008,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94045,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94066,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94073,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94085,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94106,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94114,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94123,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94138,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94165,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94224,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94267,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94305,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94312,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94314,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94321,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94336,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94343,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94345,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94347,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94362,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94370,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94372,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94388,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94420,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94464,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94488,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94547,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94555,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94557,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94562,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94636,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94639,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94693,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94738,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94765,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 94789,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94799,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94868,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94878,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 94906,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95156,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95201,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95258,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95271,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95299,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95315,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95340,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95343,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95385,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95386,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95387,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95403,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95418,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95461,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95472,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95482,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95495,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95497,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95523,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95529,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95541,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95555,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95605,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95631,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95651,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95683,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95687,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95734,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95777,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95791,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95809,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95842,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 95922,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95925,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95931,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95963,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95970,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 95975,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96007,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96012,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96013,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96020,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96028,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96047,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96093,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96149,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96169,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96175,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96179,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96228,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96238,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96241,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96259,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96263,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96267,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96295,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96310,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96327,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96342,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96343,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96353,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96355,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96361,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96384,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96387,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96408,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96416,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96417,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96421,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96426,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96444,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96461,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96519,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96537,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96552,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96553,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96562,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96580,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96625,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96628,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96684,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96689,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96698,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96702,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96703,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96705,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96712,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96723,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96794,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 96797,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96866,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96898,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96900,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96963,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96966,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 96976,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97001,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97074,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 97109,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97171,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97243,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 97283,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97338,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97341,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97370,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97377,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97412,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97417,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97441,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97451,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 97480,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97487,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97492,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97537,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97559,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97600,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 97651,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97655,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 97706,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97730,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97791,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97797,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 97809,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97833,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 97860,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 97876,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 97953,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98019,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98031,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98071,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98095,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98106,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98123,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98124,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98149,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98152,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98201,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98232,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98248,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98253,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98277,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98344,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98347,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98349,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98399,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98403,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98455,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98475,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98478,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98489,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98490,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98493,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98496,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98547,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98578,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98584,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98625,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98642,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98643,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98663,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98682,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98694,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98708,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98717,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98722,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98799,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98800,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98801,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98809,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98859,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98881,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 98926,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98929,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 98952,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99004,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99017,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99021,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99052,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99078,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99085,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99117,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99119,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99122,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99215,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99216,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99232,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99242,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99259,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99264,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99285,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99295,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99314,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99326,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99341,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99379,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99382,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99389,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99407,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99417,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99427,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99450,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99452,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99474,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99490,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99546,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99547,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99586,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99587,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99590,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99620,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99634,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99656,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99688,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99735,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99755,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99756,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 99771,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99773,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99774,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99813,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 99942,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100001,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100002,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100040,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100074,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100080,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100116,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100184,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100227,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100238,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100286,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100300,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100326,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100345,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100410,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100426,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100437,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100442,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100451,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100490,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100531,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100552,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100564,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100595,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100608,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100615,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100621,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100645,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100652,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100659,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100697,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100724,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100750,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100755,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100782,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100788,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100885,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100895,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100908,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 100909,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100953,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 100986,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101005,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101016,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101073,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101076,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101207,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101244,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101274,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101298,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101336,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101348,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101377,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101384,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101490,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101500,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101510,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101549,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101585,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101591,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101632,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101660,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101683,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101710,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101741,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101747,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101789,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101851,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101902,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101903,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101937,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 101953,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 101991,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102026,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102030,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102054,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102055,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102056,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102101,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102216,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102218,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102264,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 102273,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102276,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102279,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102292,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102309,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102312,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102371,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102407,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102425,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102449,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102463,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102484,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102501,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102528,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102537,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102639,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102646,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102649,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102663,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102682,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 102708,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102770,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102801,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102846,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102862,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102940,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 102945,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103077,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103121,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103160,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103241,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103323,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103377,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103423,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103425,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103431,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103452,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103474,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103507,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103571,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103574,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103617,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103636,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103658,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103692,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103757,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103764,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103773,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103788,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103818,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103856,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103881,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103906,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103922,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 103928,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103955,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103988,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 103999,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104082,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104090,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104134,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104141,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104157,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104170,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104232,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104234,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104246,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104254,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104261,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104266,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104276,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104289,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104311,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104336,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104339,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104340,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104348,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104354,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104358,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104359,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104368,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104415,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104419,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104441,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104448,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104466,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104480,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104506,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104569,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104571,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104584,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104659,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104677,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104684,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104725,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104730,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104731,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104742,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104754,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104761,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104762,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104765,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104766,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104851,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104857,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104868,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104886,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104941,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 104946,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 104990,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105001,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105006,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105012,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105019,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105027,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105029,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105036,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105064,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105108,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105122,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105129,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105170,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105221,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105337,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105340,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105370,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105405,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105413,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105440,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105445,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105490,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105536,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105603,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105624,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105627,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105645,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105648,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105725,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105758,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105779,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105792,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105819,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105832,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105862,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105863,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105881,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105911,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105937,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105942,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105944,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 105967,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105981,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 105994,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106014,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106038,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106039,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106087,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106101,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106109,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106215,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106218,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106236,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106259,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106278,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106297,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106323,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106326,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106343,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106369,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106379,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106396,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106412,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106422,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106423,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106441,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106492,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106524,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106584,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106589,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106612,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106618,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106666,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106670,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106713,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106734,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106757,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106765,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106773,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106818,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106825,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106875,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106891,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106903,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106905,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106919,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106920,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 106931,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106939,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106963,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 106983,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107066,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107126,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 107148,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107175,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107204,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107212,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 107213,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107219,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107224,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107247,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107263,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107297,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107304,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107317,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107345,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 107374,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 107435,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107474,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 107535,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107581,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 107634,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107641,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107659,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107661,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107682,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107687,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107733,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107739,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107754,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107757,
+   "stratum": "top",
+   "weight": 1.0
+  },
+  {
+   "number": 107779,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107829,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107835,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107836,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107859,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107861,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107864,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 107896,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107943,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107958,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107967,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107973,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 107997,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 108002,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 108003,
+   "stratum": "rest",
+   "weight": 23.98
+  },
+  {
+   "number": 108051,
+   "stratum": "security",
+   "weight": 6.296
+  },
+  {
+   "number": 108061,
+   "stratum": "rest",
+   "weight": 23.98
+  }
+ ]
+}
