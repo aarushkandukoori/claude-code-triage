@@ -66,7 +66,7 @@ Snapshot: open issues pulled 2026-11-06 ~19:30-19:40 EST (2026-11-07 ~00:30 UTC)
 
 ## Serious bugs in the sample vs the sweep (report/serious-bugs.md)
 - 52 open bugs rated S0/S1 (valid_bug, needs_info or stale_unclear; security check not rejected): 10 labeled stale now, 16 next for a working sweep, 10 active, 16 protected (10+ upvotes or assignee).
-- Pipeline timing: triage outputs 19:44-19:57 EST (pilot 19:43), verify 20:10-20:21 EST. About 25 minutes of reading and checking. 110 sessions (50 triage + 60 verify), plus 5 automatic retries.
+- Pipeline timing: triage outputs 19:44-19:57 EST (pilot 19:43), verify 20:10-20:21 EST. About 25 minutes of reading and checking. 110 sessions (50 triage + 60 verify), plus 7 automatic retries (2 in triage: b017, b044; 5 in verify: v005, v009, v036, v051 twice).
 - Notional API-equivalent cost reported by the CLI: triage $39.16, verify $22.79 (runs on a Claude Max subscription).
 - Reddit post: r/ClaudeAI, u/nseavia71501, "Open question to Anthropic: If you're making 30,000 merges a day, why are more than 98% of open GitHub issues unassigned, including serious security bugs?" (642 upvotes, 79 comments when seen). It cites Anthropic's engineering blog for 30,000+ code changes per day and says 15,766 of 16,060 open issues had no assignee.
 - John Crickett's LinkedIn post: asks why Anthropic isn't triaging with a software factory that reviews issues, filters risky ones (prompt injection) and assigns the rest to an agent or a human; says showing that factory would be a better case study than claiming 30,000 PRs per day.
