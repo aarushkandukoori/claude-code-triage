@@ -25,7 +25,7 @@ Estimates for all 16,112 open issues, from a stratified sample of 1,000, with 95
 |---|---|---|
 | Real bug, keep open | 44% (40-47%) | 7,000 |
 | Feature request, a product call | 19% (16-22%) | 3,100 |
-| Close now - already fixed or a duplicate, two checks agree | 13% (11-16%) | 2,100 |
+| Close now - already fixed or a duplicate, and neither check rejected it | 13% (11-16%) | 2,100 |
 | Not actionable - not about Claude Code, support, empty | 14% (11-16%) | 2,200 |
 | Ask the reporter - missing a repro, version or error | 10% (8-12%) | 1,700 |
 
